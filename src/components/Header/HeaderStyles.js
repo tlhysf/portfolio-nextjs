@@ -32,13 +32,17 @@ export const Logo = styled.a`
   display: flex;
   align-content: center;
   justify-items: center;
-  height: 3rem;
+  color: white;
+  /* height: 3rem; */
+  font-size: 2rem;
+  line-height: 32px;
   transition: 0.4s ease;
   &:hover {
     cursor: pointer;
-    height: 2.8rem;
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
+
+    /* height: 2.8rem; */
+    /* padding-top: 0.1rem;
+    padding-bottom: 0.1rem; */
   }
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 0.5rem;

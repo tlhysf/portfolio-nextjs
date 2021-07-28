@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
+import { BiCodeBlock } from "react-icons/bi";
 
 import {
   Container,
@@ -17,7 +18,12 @@ const Header = () => (
   <Container>
     <LogoWrapper>
       <Logo>
-        <LogoImage src="/images/logo.png" alt="logo" />
+        {/* <LogoImage src="/images/logo.png" alt="logo" /> */}
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <BiCodeBlock />
+        </div>
+        &nbsp;
+        <span>Hello</span>
       </Logo>
     </LogoWrapper>
     <NavLinksWrapper>
@@ -37,7 +43,6 @@ const Header = () => (
         </Link>
       </li>
     </NavLinksWrapper>
-    
   </Container>
 );
 
