@@ -1,6 +1,12 @@
 import { IoIosArrowDropdown } from "react-icons/io";
 import styled from "styled-components";
 
+export const Centered = styled.div`
+  display: flex;
+  align-items: center;
+  justify-items: center;
+`;
+
 export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -31,27 +37,20 @@ export const LogoWrapper = styled.div`
 export const Logo = styled.a`
   display: flex;
   align-content: center;
-  justify-items: center;
   color: white;
-  /* height: 3rem; */
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 32px;
   transition: 0.4s ease;
   &:hover {
     cursor: pointer;
-
-    /* height: 2.8rem; */
-    /* padding-top: 0.1rem;
-    padding-bottom: 0.1rem; */
+    transform: scale(1.2);
+  }
+  &:active {
+    color: rgba(255, 255, 255, 0.5);
   }
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 0.5rem;
   }
-`;
-
-export const LogoImage = styled.img`
-  height: 100%;
-  filter: invert(100%);
 `;
 
 export const NavLinksWrapper = styled.div`
@@ -64,6 +63,7 @@ export const NavLinksWrapper = styled.div`
 `;
 
 export const NavLink = styled.a`
+  display: flex;
   font-size: 2rem;
   line-height: 32px;
   color: rgba(255, 255, 255, 0.75);
@@ -72,14 +72,17 @@ export const NavLink = styled.a`
     color: #fff;
     opacity: 1;
     cursor: pointer;
-    font-size: 1.5rem;
+    transform: scale(0.8);
+  }
+  &:active {
+    color: rgba(255, 255, 255, 0.5);
   }
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 0.5rem;
   }
 `;
 
-export const Div3 = styled.div`
+export const SocialLinkWrapper = styled.div`
   grid-area: 1 / 5 / 2 / 6;
   display: flex;
   justify-content: space-around;
@@ -90,62 +93,38 @@ export const Div3 = styled.div`
   }
 `;
 
-/// DropDown Contact
-export const ContactDropDown = styled.button`
-  border: none;
-  display: flex;
-  position: relative;
-  background: none;
-  font-size: 1.7rem;
-
-  line-height: 32px;
-  color: rgba(255, 255, 255, 0.75);
-  cursor: pointer;
-  transition: 0.3s ease;
-
-  &:focus {
-    outline: none;
-  }
-  &:hover {
-    color: #fff;
-  }
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    padding: 0.4rem 0;
-  }
-  @media ${(props) => props.theme.breakpoints.md} {
-    padding: 0;
-  }
-`;
-
-export const NavProductsIcon = styled(IoIosArrowDropdown)`
-  margin-left: 8px;
-  display: flex;
-  align-self: center;
-  transition: 0.3s ease;
-  opacity: ${({ isOpen }) => (isOpen ? "1" : ".75")};
-  transform: ${({ isOpen }) => (isOpen ? "scaleY(-1)" : "scaleY(1)")};
-
-  &:hover {
-    opacity: 1;
-  }
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    margin: 2px 0 0 2px;
-    width: 15px;
-  }
-`;
-
-// Social Icons
-
 export const SocialIcons = styled.a`
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
   transition: 0.3s ease;
   color: white;
-  border-radius: 50px;
-  padding: 8px;
+  border-radius: 100%;
+  border-style: solid;
+  border-width: 0.2rem;
   &:hover {
-    background-color: #212d45;
+    color: ${(props) => {
+      switch (props.name) {
+        case "github":
+          return "indigo";
+        case "linkedin":
+          return "blueviolet";
+        case "mail":
+          return "crimson";
+        default:
+          return "black";
+      }
+    }};
+    background-color: white;
+    border-style: none;
     transform: scale(1.2);
+
     cursor: pointer;
+  }
+  &:active {
+    transform: scale(1);
   }
 `;
