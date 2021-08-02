@@ -1,45 +1,25 @@
-import { IoIosArrowDropdown } from "react-icons/io";
 import styled from "styled-components";
 
-export const Centered = styled.div`
-  display: flex;
-  align-items: center;
-  justify-items: center;
-`;
-
 export const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 2rem;
-  padding: 1rem;
-  padding-top: 2rem;
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 60px);
-    grid-column-gap: 0.5rem;
-    grid-row-gap: 0.5rem;
-  }
+  display: flex;
+  align-content: center;
+  justify-items: space-between;
+  padding: 2rem;
 `;
 
 export const LogoWrapper = styled.div`
-  grid-area: 1 / 1 / 2 / 2;
+  flex: 1;
   display: flex;
   align-content: center;
   justify-items: center;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    grid-area: 1 / 1 / 2 / 3;
-  }
 `;
 
 export const Logo = styled.a`
   display: flex;
   align-content: center;
+  justify-items: center;
   color: white;
   font-size: 3rem;
-  line-height: 32px;
   transition: 0.4s ease;
   &:hover {
     cursor: pointer;
@@ -48,22 +28,37 @@ export const Logo = styled.a`
   &:active {
     color: rgba(255, 255, 255, 0.5);
   }
-  @media ${(props) => props.theme.breakpoints.sm} {
-    padding: 0.5rem;
-  }
 `;
 
 export const NavLinksWrapper = styled.div`
-  grid-area: 1 / 2 / 2 / 4;
+  flex: 4;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  flex-direction: row;
   @media ${(props) => props.theme.breakpoints.sm} {
-    grid-area: 2 / 2 / 3 / 5;
+    display: ${(props) => (props.desktop ? "none" : "flex")};
+    flex-direction: column;
+    row-gap: 2rem;
+    flex: 1;
+  }
+`;
+
+export const SocialLinkWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  column-gap: 3rem;
+  @media ${(props) => props.theme.breakpoints.sm} {
+    display: ${(props) => (props.desktop ? "none" : "flex")};
   }
 `;
 
 export const NavLink = styled.a`
   display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 2rem;
   line-height: 32px;
   color: rgba(255, 255, 255, 0.75);
@@ -79,17 +74,6 @@ export const NavLink = styled.a`
   }
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 0.5rem;
-  }
-`;
-
-export const SocialLinkWrapper = styled.div`
-  grid-area: 1 / 5 / 2 / 6;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  @media ${(props) => props.theme.breakpoints.sm} {
-    align-items: center;
-    grid-area: 1 / 4 / 2 / 6;
   }
 `;
 
@@ -125,6 +109,33 @@ export const SocialIcons = styled.a`
     cursor: pointer;
   }
   &:active {
-    transform: scale(1);
+    transform: scale(0.8);
+  }
+`;
+
+export const MobileMenuButton = styled.div`
+  display: none;
+  @media ${(props) => props.theme.breakpoints.sm} {
+    width: 2.8rem;
+    height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    transition: 0.3s ease;
+    border-radius: 10%;
+    border-style: solid;
+    border-width: 0.2rem;
+    &:hover {
+      color: black;
+      background-color: white;
+      border-style: none;
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+    &:active {
+      transform: scale(0.8);
+    }
   }
 `;
