@@ -15,6 +15,21 @@ export const Layout = ({ children }) => {
 
   return (
     <Container>
+      <div
+        style={{
+          position: "absolute",
+          display: openMobileMenu ? "flex" : "none",
+          background: "black",
+          height: "100%",
+          width: "100%",
+          justifyContent: "center",
+          alignItems: "center",
+          color: "white",
+        }}
+        onClick={toggleMobileMenu}
+      >
+        hello
+      </div>
       <Header {...{ toggleMobileMenu }} />
       <main>{children}</main>
       <Footer />
