@@ -2,35 +2,23 @@ import React, { useState } from "react";
 
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
+import Sidebar from "../components/Header/Sidebar";
+
 import { Container } from "./LayoutStyles";
 
 export const Layout = ({ children }) => {
-  const [openMobileMenu, setOpenMobileMenu] = useState(false);
+  const [openSidebar, setOpenSidebar] = useState(false);
 
-  const toggleMobileMenu = () => {
-    setOpenMobileMenu(!openMobileMenu);
+  const toggleSidebar = () => {
+    setOpenSidebar(!openSidebar);
   };
 
-  console.log(openMobileMenu);
+  // console.log(openSidebar);
 
   return (
     <Container>
-      <div
-        style={{
-          position: "absolute",
-          display: openMobileMenu ? "flex" : "none",
-          background: "black",
-          height: "100%",
-          width: "100%",
-          justifyContent: "center",
-          alignItems: "center",
-          color: "white",
-        }}
-        onClick={toggleMobileMenu}
-      >
-        hello
-      </div>
-      <Header {...{ toggleMobileMenu }} />
+      <Sidebar {...{ toggleSidebar, openSidebar }} />
+      <Header {...{ toggleSidebar, openSidebar }} />
       <main>{children}</main>
       <Footer />
     </Container>

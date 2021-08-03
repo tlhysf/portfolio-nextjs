@@ -1,2 +1,1 @@
-- add mobile menu in layout, animate drawer
 - color provisions for dark theme in 1-header, 2-mobile menu
