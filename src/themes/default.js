@@ -11,7 +11,59 @@ export default {
     accent1: "hsl(34.9,98.6%,72.9%)",
     button: "hsl(205.1,100%,36.1%)",
     background2: "hsl(232.7,27.3%,23.7%)",
+
+    bg: {
+      primary: "#22252e",
+      secondary: "#222540",
+    },
+
+    logo: {
+      main: "#ffffff",
+      active: "#ffffff70",
+    },
+
+    navLink: {
+      primary: {
+        main: {
+          color: "#ffffff90",
+        },
+        active: {
+          color: "#ffffff70",
+        },
+        hover: {
+          color: "#ffffff",
+        },
+      },
+    },
+
+    button: {
+      primary: {
+        main: {
+          color: "#ffffff",
+          bg: "#ffffff00",
+        },
+        hover: {
+          color: "#22252e",
+          bg: "#ffffff",
+        },
+      },
+      secondary: {
+        main: {
+          color: "#ffffff",
+          bg: "#ffffff00",
+        },
+        hover: {
+          color: "#ffffff",
+          bg: "#00000050",
+        },
+        active: {
+          color: "#ffffff",
+          bg: "#00000070",
+        },
+      },
+    },
   },
+
   // Breakpoints for responsive design
   breakpoints: {
     sm: "screen and (max-width: 640px)",

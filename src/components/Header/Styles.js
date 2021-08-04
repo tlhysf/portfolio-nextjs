@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+const button = (props) => props.theme.colors.button;
+const navLink = (props) => props.theme.colors.navLink;
+const logo = (props) => props.theme.colors.logo;
+const bg = (props) => props.theme.colors.bg;
+
 export const Container = styled.div`
   display: flex;
   align-content: center;
@@ -25,7 +30,7 @@ export const Logo = styled.a`
   display: flex;
   align-content: center;
   justify-items: center;
-  color: white;
+  color: ${(props) => logo(props).main};
   font-size: 3rem;
   transition: 0.2s ease;
   &:hover {
@@ -33,7 +38,7 @@ export const Logo = styled.a`
     transform: scale(1.2);
   }
   &:active {
-    color: rgba(255, 255, 255, 0.5);
+    color: ${(props) => logo(props).active};
   }
 `;
 
@@ -75,16 +80,16 @@ export const NavLink = styled.a`
   align-items: center;
   font-size: 2rem;
   line-height: 32px;
-  color: rgba(255, 255, 255, 0.75);
+  color: ${(props) => navLink(props).primary.main.color};
   transition: 0.2s ease;
   &:hover {
-    color: #fff;
+    color: ${(props) => navLink(props).primary.hover.color};
     opacity: 1;
     cursor: pointer;
     transform: scale(0.8);
   }
   &:active {
-    color: rgba(255, 255, 255, 0.5);
+    color: ${(props) => navLink(props).primary.active.color};
   }
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 0.5rem;
@@ -99,7 +104,8 @@ export const SocialIcons = styled.a`
   justify-content: center;
   font-size: 1.8rem;
   transition: 0.2s ease;
-  color: white;
+  color: ${(props) => button(props).primary.main.color};
+  background-color: ${(props) => button(props).primary.main.bg};
   border-radius: 100%;
   border-style: solid;
   border-width: 0.2rem;
@@ -113,10 +119,10 @@ export const SocialIcons = styled.a`
         case "mail":
           return "crimson";
         default:
-          return "black";
+          return (props) => button(props).primary.hover.color;
       }
     }};
-    background-color: white;
+    background-color: ${(props) => button(props).primary.hover.bg};
     border-style: none;
     transform: scale(1.2);
     cursor: pointer;
@@ -134,15 +140,16 @@ export const SidebarOpenButton = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: ${(props) => button(props).primary.main.color};
+    background-color: ${(props) => button(props).primary.main.bg};
     font-size: 1.8rem;
     transition: 0.2s ease;
     border-radius: 10%;
     border-style: solid;
     border-width: 0.2rem;
     &:hover {
-      color: black;
-      background-color: white;
+      color: ${(props) => button(props).primary.hover.color};
+      background-color: ${(props) => button(props).primary.hover.bg};
       border-style: none;
       transform: scale(1.2);
       cursor: pointer;
@@ -164,7 +171,7 @@ export const SidebarContainer = styled.div`
   align-items: center;
   flex-direction: column;
   transform: translateX(0%);
-  background: #00000070;
+  background-color: ${(props) => bg(props).secondary};
   transition: 0.3s ease;
   transition-delay: 0.3s;
   @media ${(props) => props.openSidebar} {
@@ -179,16 +186,19 @@ export const SidebarCloseButton = styled.div`
   align-items: center;
   width: 100%;
   transition: 0.2s ease;
-  color: white;
+  color: ${(props) => button(props).secondary.main.color};
+  background-color: ${(props) => button(props).secondary.main.bg};
   font-size: 3rem;
   height: 6rem;
-
+  flex: 1;
   &:hover {
-    background-color: #ffffff30;
+    color: ${(props) => button(props).secondary.hover.color};
+    background-color: ${(props) => button(props).secondary.hover.bg};
     cursor: pointer;
   }
   &:active {
-    background-color: #ffffff10;
+    color: ${(props) => button(props).secondary.active.color};
+    background-color: ${(props) => button(props).secondary.active.bg};
     font-size: 2.5rem;
   }
 `;
