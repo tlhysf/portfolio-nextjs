@@ -4,14 +4,20 @@ const button = (props) => props.theme.colors.button;
 const navLink = (props) => props.theme.colors.navLink;
 const logo = (props) => props.theme.colors.logo;
 const bg = (props) => props.theme.colors.bg;
+const zIndex = (props) => props.theme.zIndexes;
 
 export const Container = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: ${(props) => zIndex(props).navbar};
+  width: 100%;
   display: flex;
   align-content: center;
-  justify-items: space-between;
-  padding: 2rem;
-  transform: translateY(-100%);
+  justify-items: center;
   transition: 0.3s ease;
+
+  transform: translateY(-100%);
   transition-delay: 0s;
   @media ${(props) => props.openSidebar} {
     transform: translateY(0%);
@@ -19,11 +25,31 @@ export const Container = styled.div`
   }
 `;
 
+const boxShadow =
+  "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px";
+
+export const Paper = styled.div`
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-items: space-between;
+  padding: 2rem;
+  transition: 0.6s ease;
+  @media ${(props) => props.scroll.y <= 0} {
+    background-color: ${(props) => bg(props).secondary};
+    box-shadow: ${boxShadow};
+    -moz-box-shadow: ${boxShadow};
+    -webkit-box-shadow: ${boxShadow};
+  }
+`;
+
 export const LogoWrapper = styled.div`
-  flex: 1;
   display: flex;
   align-content: center;
   justify-items: center;
+  @media ${(props) => props.theme.breakpoints.sm} {
+    flex: 1;
+  }
 `;
 
 export const Logo = styled.a`
@@ -43,29 +69,27 @@ export const Logo = styled.a`
 `;
 
 export const NavLinksWrapper = styled.div`
-  flex: 4;
+  flex: 1;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-direction: row;
+  column-gap: 6rem;
   @media ${(props) => props.theme.breakpoints.sm} {
     display: ${(props) => (props.desktop ? "none" : "flex")};
     flex-direction: column;
     row-gap: 2rem;
     justify-content: center;
-    flex: 2;
   }
   @media ${(props) => props.desktop} {
     flex-direction: column;
     row-gap: 2rem;
     justify-content: center;
-    flex: 2;
   }
 `;
 
 export const SocialLinksWrapper = styled.div`
-  flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
   column-gap: 3rem;
@@ -162,6 +186,7 @@ export const SidebarOpenButton = styled.div`
 
 export const SidebarContainer = styled.div`
   position: fixed;
+  z-index: ${(props) => zIndex(props).drawer};
   height: 100vh;
   width: 100vw;
   left: 0;
@@ -190,7 +215,6 @@ export const SidebarCloseButton = styled.div`
   background-color: ${(props) => button(props).secondary.main.bg};
   font-size: 3rem;
   height: 6rem;
-  flex: 1;
   &:hover {
     color: ${(props) => button(props).secondary.hover.color};
     background-color: ${(props) => button(props).secondary.hover.bg};

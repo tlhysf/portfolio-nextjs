@@ -6,7 +6,7 @@ import Sidebar from "../components/Header/Sidebar";
 
 import { Container } from "./LayoutStyles";
 
-export const Layout = ({ children }) => {
+export const Layout = ({ children, scroll }) => {
   const [openSidebar, setOpenSidebar] = useState(false);
 
   const toggleSidebar = () => {
@@ -18,7 +18,7 @@ export const Layout = ({ children }) => {
   return (
     <Container>
       <Sidebar {...{ toggleSidebar, openSidebar }} />
-      <Header {...{ toggleSidebar, openSidebar }} />
+      <Header {...{ toggleSidebar, openSidebar, scroll }} />
       <main>{children}</main>
       <Footer />
     </Container>
