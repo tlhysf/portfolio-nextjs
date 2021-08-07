@@ -6,12 +6,13 @@ import {
   SectionTitle,
 } from "../../styles/GlobalComponents";
 import Button from "../../styles/GlobalComponents/Button";
-import { LeftSection } from "./HeroStyles";
+import { BannerContent } from "./HeroStyles";
 
 const Hero = (props) => (
   <div>
-    <Section row nopadding>
-      <LeftSection>
+    <Section fullView>
+      <div style={{ height: "7rem" }} />
+      <BannerContent>
         <SectionTitle main center>
           Hello,
           <br />
@@ -22,12 +23,8 @@ const Hero = (props) => (
           <br />I stare at a glowing rectangle all day.
         </SectionText>
         <br />
-        <Section row nopadding>
-          <Button>View Resume</Button>
-          &nbsp;&nbsp;
-          <Button>Get In Touch</Button>
-        </Section>
-      </LeftSection>
+        <Button>View Resume</Button>
+      </BannerContent>
     </Section>
   </div>
 );
