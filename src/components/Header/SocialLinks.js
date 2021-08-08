@@ -1,11 +1,11 @@
 import React from "react";
 
 import { AiFillGithub, AiFillMail, AiFillLinkedin } from "react-icons/ai";
-import { SocialLinksWrapper, SocialIcons } from "./Styles";
+import { ButtonsWrapper, SocialIcons } from "./Styles";
 
 const SocialLinks = (props) => {
   return (
-    <SocialLinksWrapper desktop={props.desktop}>
+    <ButtonsWrapper {...props}>
       <SocialIcons
         key="github"
         name="github"
@@ -30,7 +30,7 @@ const SocialLinks = (props) => {
       >
         <AiFillMail />
       </SocialIcons>
-    </SocialLinksWrapper>
+    </ButtonsWrapper>
   );
 };
 export default SocialLinks;

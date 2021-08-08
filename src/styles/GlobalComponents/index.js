@@ -5,8 +5,8 @@ export const Section = styled.section`
   flex-direction: ${(props) => (props.row ? "row" : "column")};
   padding: ${(props) => (props.nopadding ? "0" : "32px 48px 0")};
   margin: 0 auto;
-  min-height: ${(props) => (props.fullView ? "100vh" : "auto")};
-  max-width: 1040px;
+  min-height: ${(props) => (props.fullHeight ? "100vh" : "auto")};
+  max-width: ${(props) => (props.fullWidth ? "100%" : "1040px")};
   box-sizing: content-box;
   position: relative;
   overflow: hidden;
@@ -293,5 +293,40 @@ export const LinkIconImg = styled.div`
 
   @media ${(props) => props.theme.breakpoints.sm} {
     height: ${({ large }) => (large ? "32px" : "16px")};
+  }
+`;
+
+export const CTAButton = styled.button`
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s ease;
+  cursor: pointer;
+  border-radius: 5px;
+
+  width: 18rem;
+  height: 6rem;
+  font-size: 2rem;
+  font-weight: 400;
+
+  @media ${(props) => !props.small} {
+    width: 12rem;
+    height: 4rem;
+    font-size: 1.7rem;
+  }
+
+  background: ${(props) => props.theme.colors.accent.primary};
+  color: white;
+
+  &:hover {
+    border: solid;
+    background: none;
+  }
+
+  &:active {
+    transform: scale(0.9);
+    background: ${(props) => props.theme.colors.accent.primary + "50"};
+    font-size: ${(props) => (props.small ? "2rem" : "2.5rem")};
   }
 `;

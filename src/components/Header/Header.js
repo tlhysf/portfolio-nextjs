@@ -6,6 +6,7 @@ import { BiCodeBlock } from "react-icons/bi";
 
 import SocialLinks from "./SocialLinks";
 import NavLinks from "./NavLinks";
+import ResumeButton from "./ResumeButton";
 
 import {
   Container,
@@ -13,6 +14,7 @@ import {
   LogoWrapper,
   Logo,
   SidebarOpenButton,
+  ButtonsWrapper,
 } from "./Styles";
 
 const Header = (props) => {
@@ -26,8 +28,8 @@ const Header = (props) => {
             </Logo>
           </Link>
         </LogoWrapper>
-        <NavLinks desktop />
-        <SocialLinks desktop />
+        <NavLinks />
+        <ResumeButton />
         <SidebarOpenButton onClick={props.toggleSidebar}>
           <IoIosMenu />
         </SidebarOpenButton>
