@@ -2,11 +2,14 @@ import React from "react";
 
 import { IoIosCloseCircleOutline } from "react-icons/io";
 
-import SocialLinks from "./SocialLinks";
-import NavLinks from "./NavLinks";
-import ResumeButton from "./ResumeButton";
+import SocialLinks from "components/Common/SocialLinks";
+import NavLinks from "components/Navbar/NavLinks";
+import ResumeButton from "components/Common/ResumeButton";
 
-import { SidebarContainer, SidebarCloseButton } from "./Styles";
+import {
+  SidebarContainer,
+  SidebarCloseButton,
+} from "components/Sidebar/Styles";
 
 const Sidebar = (props) => {
   return (
@@ -15,8 +18,8 @@ const Sidebar = (props) => {
         <IoIosCloseCircleOutline />
       </SidebarCloseButton>
       <NavLinks sidebar />
-      <ResumeButton sidebar />
-      <SocialLinks sidebar />
+      <ResumeButton />
+      <SocialLinks />
     </SidebarContainer>
   );
 };

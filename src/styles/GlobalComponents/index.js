@@ -36,16 +36,17 @@ export const SectionTitle = styled.h2`
     #ffffff 18.77%,
     rgba(255, 255, 255, 0.66) 60.15%
   );
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 16px;
-  padding: ${(props) => (props.main ? "58px 0 16px" : "0")};
+  padding-bottom: ${(props) => (props.main ? "16px" : "0")};
 
   @media ${(props) => props.theme.breakpoints.md} {
     font-size: ${(props) => (props.main ? "56px" : "48px")};
     line-height: ${(props) => (props.main ? "56px" : "48px")};
     margin-bottom: 12px;
-    padding: ${(props) => (props.main ? "40px 0 12px" : "0")};
+    padding-bottom: ${(props) => (props.main ? "12px" : "0")};
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
@@ -54,7 +55,7 @@ export const SectionTitle = styled.h2`
     font-size: ${(props) => (props.main ? "28px" : "32px")};
     line-height: ${(props) => (props.main ? "32px" : "40px")};
     margin-bottom: 8px;
-    padding: ${(props) => (props.main ? "16px 0 8px" : "0")};
+    padding-bottom: ${(props) => (props.main ? "8px" : "0")};
     max-width: 100%;
   }
 `;
@@ -293,40 +294,5 @@ export const LinkIconImg = styled.div`
 
   @media ${(props) => props.theme.breakpoints.sm} {
     height: ${({ large }) => (large ? "32px" : "16px")};
-  }
-`;
-
-export const CTAButton = styled.button`
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.4s ease;
-  cursor: pointer;
-  border-radius: 5px;
-
-  width: 18rem;
-  height: 6rem;
-  font-size: 2rem;
-  font-weight: 400;
-
-  @media ${(props) => !props.small} {
-    width: 12rem;
-    height: 4rem;
-    font-size: 1.7rem;
-  }
-
-  background: ${(props) => props.theme.colors.accent.primary};
-  color: white;
-
-  &:hover {
-    border: solid;
-    background: none;
-  }
-
-  &:active {
-    transform: scale(0.9);
-    background: ${(props) => props.theme.colors.accent.primary + "50"};
-    font-size: ${(props) => (props.small ? "2rem" : "2.5rem")};
   }
 `;

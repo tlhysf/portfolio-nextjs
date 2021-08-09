@@ -1,7 +1,7 @@
 import React from "react";
 import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
 
-import { SocialIcons } from "../Header/Styles";
+import { SocialIcons } from "../Navbar/Styles";
 import {
   CompanyContainer,
   FooterWrapper,

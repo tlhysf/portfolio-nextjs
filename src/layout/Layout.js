@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-import Footer from "../components/Footer/Footer";
-import Header from "../components/Header/Header";
-import Sidebar from "../components/Header/Sidebar";
-import SocialLinksFAB from "../components/Header/SociaLinksFAB";
+import Footer from "components/Footer/Footer";
+import Navbar from "components/Navbar/Navbar";
+import Sidebar from "components/Sidebar/Sidebar";
+import SocialLinksFAB from "components/Common/SociaLinksFAB";
 
-import { Container } from "./LayoutStyles";
+import { Container } from "layout/LayoutStyles";
 
 export const Layout = ({ children, scroll }) => {
   const [openSidebar, setOpenSidebar] = useState(false);
@@ -14,13 +14,11 @@ export const Layout = ({ children, scroll }) => {
     setOpenSidebar(!openSidebar);
   };
 
-  // console.log(openSidebar);
-
   return (
     <Container>
       <Sidebar {...{ toggleSidebar, openSidebar }} />
       <SocialLinksFAB />
-      <Header {...{ toggleSidebar, openSidebar, scroll }} />
+      <Navbar {...{ toggleSidebar, openSidebar, scroll }} />
       <main>{children}</main>
       <Footer />
     </Container>

@@ -4,12 +4,13 @@ import {
   Section,
   SectionText,
   SectionTitle,
-  CTAButton,
 } from "../../styles/GlobalComponents";
 
-import { BannerContent } from "./HeroStyles";
+import { CTAButton } from "components/Common/Styles";
 
-const Hero = (props) => (
+import { BannerContent } from "components/Hero/HeroStyles";
+
+const Hero = () => (
   <div>
     <Section fullHeight nopadding>
       <div style={{ height: "7rem" }} />
@@ -23,7 +24,6 @@ const Hero = (props) => (
           I'm a Full Stack Web Developer.
           <br />I stare at a glowing rectangle all day.
         </SectionText>
-        <br />
         <CTAButton>Get In Touch</CTAButton>
       </BannerContent>
     </Section>

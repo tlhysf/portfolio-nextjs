@@ -39,7 +39,7 @@ export default {
       },
     },
 
-    button: {
+    iconButton: {
       primary: {
         main: {
           color: "#ffffff",

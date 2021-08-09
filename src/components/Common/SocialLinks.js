@@ -1,7 +1,7 @@
 import React from "react";
 
 import { AiFillGithub, AiFillMail, AiFillLinkedin } from "react-icons/ai";
-import { ButtonsWrapper, SocialIcons } from "./Styles";
+import { ButtonsWrapper, SocialIcons } from "components/Common/Styles";
 
 const SocialLinks = (props) => {
   return (

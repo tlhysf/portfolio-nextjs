@@ -1,7 +1,6 @@
 import React from "react";
 
-import { CTAButton } from "../../styles/GlobalComponents";
-import { ButtonsWrapper } from "./Styles";
+import { CTAButton, ButtonsWrapper } from "components/Common/Styles";
 
 const ResumeButton = (props) => {
   return (
