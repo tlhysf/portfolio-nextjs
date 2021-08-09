@@ -4,16 +4,18 @@ import {
   Section,
   SectionText,
   SectionTitle,
-} from "../../styles/GlobalComponents";
-
+} from "components/Common/SectionStyles";
 import { CTAButton } from "components/Common/Styles";
+import { BannerContent, BannerBgContainer } from "components/Banner/Styles";
+import BackgroundAnimation from "components/Common/BackgroundAnimation";
 
-import { BannerContent } from "components/Hero/HeroStyles";
-
-const Hero = () => (
+const Banner = () => (
   <div>
-    <Section fullHeight nopadding>
-      <div style={{ height: "7rem" }} />
+    <Section nopadding fullHeight>
+      <BannerBgContainer>
+        <BackgroundAnimation />
+        {/* <img src="images/banner-bg.gif" alt="banner" /> */}
+      </BannerBgContainer>
       <BannerContent>
         <SectionTitle main center>
           Hello,
@@ -30,4 +32,4 @@ const Hero = () => (
   </div>
 );
 
-export default Hero;
+export default Banner;

@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 
 import Acomplishments from "../components/Acomplishments/Acomplishments";
-import BgAnimation from "../components/BackgrooundAnimation/BackgroundAnimation";
-import Hero from "../components/Hero/Hero";
+import Banner from "../components/Banner/Banner";
 import Projects from "../components/Projects/Projects";
+import FeaturedProjects from "../components/FeaturedProjects/FeaturedProjects";
 import Technologies from "../components/Technologies/Technologies";
 import Timeline from "../components/TimeLine/TimeLine";
 import { Layout } from "../layout/Layout";
-import { Section } from "../styles/GlobalComponents";
 
 const Home = () => {
   // state to keep track of how many px scrolled
@@ -22,10 +21,8 @@ const Home = () => {
 
   return (
     <Layout scroll={scroll}>
-      {/* <Section grid> */}
-      <Hero />
-      {/* <BgAnimation /> */}
-      {/* </Section> */}
+      <Banner />
+      <FeaturedProjects />
       <Projects />
       <Technologies />
       <Timeline />
