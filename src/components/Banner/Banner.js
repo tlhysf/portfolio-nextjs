@@ -4,6 +4,7 @@ import {
   Section,
   SectionText,
   SectionTitle,
+  SectionDivider,
 } from "components/Common/SectionStyles";
 import { CTAButton } from "components/Common/Styles";
 import { BannerContent, BannerBgContainer } from "components/Banner/Styles";

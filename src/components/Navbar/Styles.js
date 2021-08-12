@@ -18,8 +18,10 @@ export const Container = styled.div`
 
   transform: translateY(-100%);
   transition-delay: 0s;
+
   @media ${(props) => props.openSidebar} {
-    transform: translateY(0%);
+    transform: ${(props) =>
+      props.scroll.yUpward ? "translateY(0%)" : "translateY(-100%)"};
     transition-delay: 0.3s;
   }
 `;
@@ -38,6 +40,7 @@ export const Paper = styled.div`
   transition: 0.6s ease;
 
   @media ${(props) => props.scroll.y <= 0} {
+    display: flex;
     background-color: ${(props) => bg(props).secondary + "50"};
 
     -webkit-backdrop-filter: blur(30px);

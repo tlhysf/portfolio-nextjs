@@ -1,9 +1,33 @@
 import React from "react";
 
-// import { BlogCard, CardInfo, ExternalLinks, GridContainer, HeaderThree, Hr, Tag, TagList, TitleContent, UtilityList, Img } from './ProjectsStyles';
-// import { Section, SectionDivider, SectionTitle } from '../../styles/GlobalComponents';
-// import { projects } from '../../constants/constants';
+import {
+  BlogCard,
+  CardInfo,
+  ExternalLinks,
+  GridContainer,
+  HeaderThree,
+  Hr,
+  Tag,
+  TagList,
+  TitleContent,
+  UtilityList,
+  Img,
+} from "components/Projects/ProjectsStyles";
 
-const Projects = () => <div>Projects</div>;
+import {
+  Section,
+  SectionDivider,
+  SectionTitle,
+} from "components/Common/SectionStyles";
+
+import { projects } from "data/projects";
+
+const Projects = () => (
+  <Section fullHeight nopadding id="Projects">
+    <SectionDivider colorAlt divider />
+
+    <SectionTitle main>Projects</SectionTitle>
+  </Section>
+);
 
 export default Projects;
