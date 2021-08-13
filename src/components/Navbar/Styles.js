@@ -37,11 +37,13 @@ export const Paper = styled.div`
   align-content: center;
   justify-items: space-between;
   padding: 2rem 6rem;
+  margin-top: 0;
   transition: 0.6s ease;
 
   @media ${(props) => props.scroll.y <= 0} {
-    display: flex;
-    background-color: ${(props) => bg(props).secondary + "50"};
+    margin-top: 1rem;
+
+    background-color: #ffffff20;
 
     -webkit-backdrop-filter: blur(30px);
     backdrop-filter: blur(30px);
