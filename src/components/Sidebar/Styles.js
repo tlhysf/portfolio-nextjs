@@ -17,7 +17,11 @@ export const SidebarContainer = styled.div`
   align-items: center;
   flex-direction: column;
   row-gap: 10rem;
-  background-color: ${(props) => bg(props).secondary};
+
+  background-color: ${(props) => bg(props).secondary + "90"};
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+
   transition: 0.3s ease;
 
   transform: translateX(0%);

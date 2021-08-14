@@ -85,6 +85,11 @@ export const SectionText = styled.p`
     line-height: 24px;
     padding-bottom: 16px;
   }
+
+  @media ${(props) => props.theme.breakpoints.xl} {
+    margin-left: ${(props) => (props.xMargin ? "6rem" : 0)};
+    margin-right: ${(props) => (props.xMargin ? "6rem" : 0)};
+  }
 `;
 
 export const SectionDivider = styled.div`

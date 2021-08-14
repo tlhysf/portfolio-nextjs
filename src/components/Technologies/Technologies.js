@@ -1,8 +1,57 @@
 import React from "react";
-// import { DiFirebase, DiReact, DiZend } from 'react-icons/di';
-// import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-// import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './TechnologiesStyles';
 
-const Technologies = () => <div>Technologies</div>;
+import {
+  Section,
+  SectionDivider,
+  SectionText,
+  SectionTitle,
+} from "components/Common/SectionStyles";
+
+import {
+  List,
+  ListContainer,
+  ListItem,
+  ListParagraph,
+  ListTitle,
+} from "components/Technologies/Styles";
+
+const Technologies = () => (
+  <Section fullHeight nopadding id="Skills">
+    <SectionDivider colorAlt divider xMargin />
+    <SectionTitle xMargin>Technologies</SectionTitle>
+    <SectionText xMargin>
+      I've worked with a range a technologies in the web development. From
+      Back-end To Design.
+    </SectionText>
+    <List xMargin>
+      <ListItem>
+        <ListContainer>
+          <ListTitle>Frontend</ListTitle>
+          <ListParagraph>ReactJS</ListParagraph>
+          <ListParagraph>Redux</ListParagraph>
+          <ListParagraph>Styled Components</ListParagraph>
+          <ListParagraph>NextJS</ListParagraph>
+          <ListParagraph>MaterialUI</ListParagraph>
+        </ListContainer>
+      </ListItem>
+      <ListItem>
+        <ListContainer>
+          <ListTitle>Backend</ListTitle>
+          <ListParagraph>NodeJS</ListParagraph>
+          <ListParagraph>MongoDB</ListParagraph>
+          <ListParagraph>Firebase</ListParagraph>
+          <ListParagraph>JWT</ListParagraph>
+        </ListContainer>
+      </ListItem>
+      <ListItem>
+        <ListContainer>
+          <ListTitle>Other</ListTitle>
+          <ListParagraph>Figma</ListParagraph>
+          <ListParagraph>Git</ListParagraph>
+        </ListContainer>
+      </ListItem>
+    </List>
+  </Section>
+);
 
 export default Technologies;
