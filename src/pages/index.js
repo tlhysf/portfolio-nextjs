@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Acomplishments from "../components/Acomplishments/Acomplishments";
 import Banner from "../components/Banner/Banner";
 import Projects from "../components/Projects/Projects";
-import Technologies from "../components/Technologies/Technologies";
+import Skills from "../components/Skills/Skills";
 import Timeline from "../components/TimeLine/TimeLine";
 import { Layout } from "../layout/Layout";
 
@@ -28,7 +28,7 @@ const Home = () => {
     <Layout scroll={scroll}>
       <Banner />
       <Projects />
-      <Technologies />
+      <Skills />
       <Timeline />
       <Acomplishments />
     </Layout>

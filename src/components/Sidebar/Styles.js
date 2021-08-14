@@ -25,7 +25,7 @@ export const SidebarContainer = styled.div`
   transition: 0.3s ease;
 
   transform: translateX(0%);
-  transition-delay: 0.3s;
+  transition-delay: 0.1s;
   @media ${(props) => props.openSidebar} {
     transform: translateX(100%);
     transition-delay: 0s;

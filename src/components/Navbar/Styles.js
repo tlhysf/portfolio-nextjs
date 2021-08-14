@@ -22,7 +22,7 @@ export const Container = styled.div`
   @media ${(props) => props.openSidebar} {
     transform: ${(props) =>
       props.scroll.yUpward ? "translateY(0%)" : "translateY(-100%)"};
-    transition-delay: 0.3s;
+    transition-delay: 0.1s;
   }
 `;
 

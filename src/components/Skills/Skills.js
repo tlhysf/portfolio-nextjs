@@ -13,12 +13,12 @@ import {
   ListItem,
   ListParagraph,
   ListTitle,
-} from "components/Technologies/Styles";
+} from "components/Skills/Styles";
 
-const Technologies = () => (
+const Skills = () => (
   <Section fullHeight nopadding id="Skills">
     <SectionDivider colorAlt divider xMargin />
-    <SectionTitle xMargin>Technologies</SectionTitle>
+    <SectionTitle xMargin>Skills</SectionTitle>
     <SectionText xMargin>
       I've worked with a range a technologies in the web development. From
       Back-end To Design.
@@ -54,4 +54,4 @@ const Technologies = () => (
   </Section>
 );
 
-export default Technologies;
+export default Skills;

@@ -38,35 +38,30 @@ export const List = styled.ul`
   gap: 40px;
   margin: 3rem 0;
 
+  @media ${(props) => props.theme.breakpoints.xl} {
+    margin-left: ${(props) => (props.xMargin ? "6rem" : 0)};
+    margin-right: ${(props) => (props.xMargin ? "6rem" : 0)};
+  }
+
   @media ${(props) => props.theme.breakpoints.lg} {
-    margin: 64px 0;
+    margin-top: 64px;
   }
 
   @media ${(props) => props.theme.breakpoints.md} {
-    margin: 64px 0;
+    margin-top: 64px;
     gap: 24px;
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
     display: flex;
     flex-direction: column;
-    margin: 32px 0;
-  }
-
-  @media ${(props) => props.theme.breakpoints.xl} {
-    margin-left: ${(props) => (props.xMargin ? "6rem" : 0)};
-    margin-right: ${(props) => (props.xMargin ? "6rem" : 0)};
+    margin-top: 32px;
   }
 `;
 
 export const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    display: flex;
-    margin-left: 18px;
-  }
 `;
 
 export const ListTitle = styled.h4`
