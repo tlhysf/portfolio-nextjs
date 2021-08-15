@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 
-import Acomplishments from "../components/Acomplishments/Acomplishments";
+// import Acomplishments from "../components/Acomplishments/Acomplishments";
 import Banner from "../components/Banner/Banner";
 import Projects from "../components/Projects/Projects";
 import Skills from "../components/Skills/Skills";
-import Timeline from "../components/TimeLine/TimeLine";
+import Experiences from "components/Experience/Experience";
+// import Timeline from "../components/TimeLine/TimeLine";
 import { Layout } from "../layout/Layout";
 
 const Home = () => {
@@ -29,8 +30,9 @@ const Home = () => {
       <Banner />
       <Projects />
       <Skills />
-      <Timeline />
-      <Acomplishments />
+      <Experiences />
+      {/* <Timeline /> */}
+      {/* <Acomplishments /> */}
     </Layout>
   );
 };
