@@ -17,13 +17,14 @@ import {
   Title,
   Place,
   Bullet,
+  Description,
 } from "components/Experience/Styles";
 
-import { BsFillCircleFill as Circle } from "react-icons/bs";
+import { VscCircleFilled as Circle, VscLinkExternal } from "react-icons/vsc";
 
 import { experiences } from "data/experiences";
 
-const Experience = ({ period, title, place, bullets }) => (
+const Experience = ({ period, title, place, bullets, link, description }) => (
   <List row>
     <List noGap>
       <CircleContainer>
@@ -37,7 +38,13 @@ const Experience = ({ period, title, place, bullets }) => (
       <Period>{period}</Period>
       <List>
         <Title>{title}</Title>
-        <Place>{place}</Place>
+        <Place href={link} target="_blank">
+          {place}&emsp;
+          <VscLinkExternal />
+        </Place>
+        <Description>
+          <small>{description}</small>
+        </Description>
         {bullets ? (
           <List>
             {bullets.map((bullet, index) => (

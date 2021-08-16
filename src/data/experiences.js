@@ -1,9 +1,15 @@
 export const experiences = [
   {
-    id: 1,
-    period: 2021,
-    title: "job title",
-    place: "job location",
-    bullets: ["bullet point one", "bullet point two", "bullet point three"],
+    period: "April 2021 - Present",
+    title: "MERN Stack Developer",
+    place: "Sedenius Technologies (Pvt) Ltd.",
+    description: "A subsidiary of Sedenius Engineering GmbH.",
+    bullets: [
+      "bullet point one",
+      "bullet point two",
+      "bullet point three",
+      "bullet point four",
+    ],
+    link: "https://pk.sedenius.com/",
   },
 ];

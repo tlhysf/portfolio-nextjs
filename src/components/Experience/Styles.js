@@ -13,8 +13,8 @@ export const ListContainer = styled.div`
 export const List = styled.div`
   display: flex;
   flex-direction: ${(props) => (props.row ? "row" : "column")};
-  row-gap: ${(props) => (props.noGap ? 0 : "3rem")};
-  column-gap: ${(props) => (props.noGap ? 0 : "3rem")};
+  row-gap: ${(props) => (props.noGap ? 0 : "2rem")};
+  column-gap: ${(props) => (props.noGap ? 0 : "2rem")};
 
   @media ${(props) => props.theme.breakpoints.sm} {
     flex-direction: ${(props) =>
@@ -22,15 +22,16 @@ export const List = styled.div`
   }
 `;
 
-const circleSize = 5;
-const titleFontSize = 20;
-const lineWidth = circleSize / 3;
+const circleSize = 15;
+const titleFontSize = circleSize * 1.2;
+const titleFontHeight = circleSize * 1.5;
+const lineWidth = circleSize / 6;
 const lineMargin = circleSize / 2 - lineWidth / 2;
 const color = "#ffffff";
 
 export const CircleContainer = styled.div`
   font-size: ${circleSize}px;
-  height: ${titleFontSize}px;
+  height: ${titleFontHeight}px;
   color: ${color};
   display: flex;
   align-items: center;
@@ -48,10 +49,42 @@ export const Line = styled.div`
   border-radius: ${lineWidth}px;
 `;
 
-export const Period = styled.div``;
+export const Period = styled.div`
+  font-size: ${circleSize}px;
+  height: ${titleFontHeight}px;
+  color: ${color};
+  display: flex;
+  align-items: center;
+  opacity: 0.8;
+`;
 
-export const Title = styled.div``;
+export const Title = styled.div`
+  font-size: ${titleFontSize}px;
+  height: ${titleFontHeight}px;
+  color: ${color};
+  display: flex;
+  align-items: center;
+  font-weight: ${circleSize * 100};
+  letter-spacing: ${lineWidth}px;
+`;
 
-export const Place = styled.div``;
+export const Place = styled.a`
+  font-size: ${titleFontSize}px;
+  color: ${(props) => props.theme.colors.accent.primary};
+  display: flex;
+  align-items: center;
+  font-style: italic;
+
+  &:hover {
+    border-bottom: solid 0.8px;
+  }
+`;
+
+export const Description = styled.div`
+  color: ${color};
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+`;
 
 export const Bullet = styled.div``;
