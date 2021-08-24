@@ -1,7 +1,17 @@
-export const TimeLineData = [
-  { year: 2017, text: "Started my journey" },
-  { year: 2018, text: "Worked as a freelance developer" },
-  { year: 2019, text: "Founded JavaScript Mastery" },
-  { year: 2020, text: "Shared my projects with the world" },
-  { year: 2021, text: "Started my own platform" },
+export const timeline = [
+  {
+    period: "April 2021 - Present",
+    title: "MERN Stack Developer",
+    place: "Sedenius Technologies (Pvt) Ltd.",
+    description:
+      "A subsidiary of Sedenius Engineering GmbH, focused on software development for automotive industry.",
+    bullets: [
+      "Implemented new features, resolved bugs, improved perfomrance through code-refactoring for a react native app.",
+      "Developed a customer-facing asset management and rental web portal using React, Redux, and, LeafletJS.",
+      "Closely worked with product manager and design team to bring the application from concept to code.",
+      "Set up CI/CD pipeline with Jenkins.",
+      "Performed manual testing in various browsers and mobile devices to ensure cross-browser compatibility and responsiveness.",
+    ],
+    link: "https://pk.sedenius.com/",
+  },
 ];

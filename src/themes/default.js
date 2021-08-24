@@ -13,11 +13,17 @@ export default {
 
     accent: {
       primary: "#f56038",
+      hover: "#112240",
+    },
+
+    text: {
+      primary: "#ccd6f6",
+      secondary: "#8892b0",
     },
 
     bg: {
-      primary: "#131114",
-      secondary: "#272329",
+      primary: "#020c1b",
+      secondary: "#0a192f",
     },
 
     logo: {

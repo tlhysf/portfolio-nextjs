@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Banner from "../components/Banner/Banner";
 import Projects from "../components/Projects/Projects";
 import Skills from "../components/Skills/Skills";
-import Experiences from "components/Experience/Experience";
+import Timeline from "components/Timeline/Timeline";
 // import Timeline from "../components/TimeLine/TimeLine";
 import { Layout } from "../layout/Layout";
 
@@ -23,16 +23,12 @@ const Home = () => {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
-  // console.log(scroll);
-
   return (
     <Layout scroll={scroll}>
       <Banner />
       <Projects />
       <Skills />
-      <Experiences />
-      {/* <Timeline /> */}
-      {/* <Acomplishments /> */}
+      <Timeline />
     </Layout>
   );
 };
