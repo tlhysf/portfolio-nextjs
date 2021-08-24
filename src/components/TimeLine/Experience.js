@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import {
   ExpandButton,
@@ -8,10 +8,12 @@ import {
   Text,
   BulletContainer,
   BulletIcon,
-  Reveal,
+  BulletList,
+  Dot,
+  Line,
 } from "components/Timeline/Styles";
 
-import { FiChevronsRight } from "react-icons/fi";
+import { FiChevronsRight, FiCircle } from "react-icons/fi";
 
 const Experience = ({
   period,
@@ -21,52 +23,62 @@ const Experience = ({
   link,
   description,
   index,
+  expanded,
+  setExpanded,
 }) => {
-  const [expand, setExpand] = useState(false);
+  const isExpanded = expanded === index;
 
-  // <List noGap>
-  //   <CircleContainer>
-  //     <Circle />
-  //   </CircleContainer>
-  //   <LineContainer>
-  //     <Line />
-  //   </LineContainer>
-  // </List>;
+  const delay = (seconds = 0) =>
+    (isExpanded ? 0 + seconds : bullets.length - seconds) / 50;
 
   return (
-    <List row responsive>
-      <ExpandButton selected={expand} onClick={(e) => setExpand((x) => !x)}>
-        {period}
-      </ExpandButton>
+    <List row>
+      <List noGap>
+        <Dot selected={isExpanded}>
+          <FiCircle />
+        </Dot>
+        <Line selected={isExpanded} />
+      </List>
 
-      <List>
-        <List row responsive noGap>
-          <Title>{title}</Title>
-          <ExternalLink href={link} target="_blank">
-            @&nbsp;{place}
-          </ExternalLink>
-        </List>
+      <List row responsive>
+        <ExpandButton
+          selected={isExpanded}
+          onClick={(e) => setExpanded((x) => (x === index ? null : index))}
+        >
+          {period}
+        </ExpandButton>
 
-        <Reveal when={expand}>
-          <List>
-            <Text>
-              <i>{description}</i>
-            </Text>
-            {bullets ? (
-              <List>
-                {bullets.map((bullet, index) => (
-                  <BulletContainer key={bullet + index}>
-                    <BulletIcon>
-                      <FiChevronsRight />
-                    </BulletIcon>
-
-                    <Text>{bullet}</Text>
-                  </BulletContainer>
-                ))}
-              </List>
-            ) : null}
+        <List>
+          <List row responsive noGap>
+            <Title>{title}</Title>
+            <ExternalLink href={link} target="_blank">
+              @&nbsp;{place}
+            </ExternalLink>
           </List>
-        </Reveal>
+
+          {bullets ? (
+            <BulletList when={isExpanded} delay={delay()}>
+              <BulletContainer when={isExpanded} delay={delay()}>
+                <Text>
+                  <i>{description}</i>
+                </Text>
+              </BulletContainer>
+              {bullets.map((bullet, index) => (
+                <BulletContainer
+                  key={index}
+                  when={isExpanded}
+                  delay={delay(index)}
+                >
+                  <BulletIcon>
+                    <FiChevronsRight />
+                  </BulletIcon>
+
+                  <Text>{bullet}</Text>
+                </BulletContainer>
+              ))}
+            </BulletList>
+          ) : null}
+        </List>
       </List>
     </List>
   );

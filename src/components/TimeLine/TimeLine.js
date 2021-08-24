@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   Section,
@@ -13,23 +13,26 @@ import Experience from "components/Timeline/Experience";
 
 import { timeline } from "data/timeline";
 
-const Timeline = () => (
-  <Section fullHeight nopadding id="About">
-    <SectionDivider colorAlt divider xMargin />
-    <SectionTitle xMargin>About</SectionTitle>
-    <SectionText xMargin>
-      I've worked with a range a technologies in the web development. From
-      Back-end To Design.
-    </SectionText>
-    <br />
-    <Container xMargin>
-      <List>
-        {timeline.map((experience, index) => (
-          <Experience key={experience.period} {...{ ...experience, index }} />
-        ))}
-      </List>
-    </Container>
-  </Section>
-);
+const Timeline = () => {
+  const [expanded, setExpanded] = useState(null);
+
+  return (
+    <Section fullHeight nopadding id="About">
+      <SectionDivider colorAlt divider xMargin />
+      <SectionTitle xMargin>About</SectionTitle>
+      <br />
+      <Container xMargin>
+        <List>
+          {timeline.map((experience, index) => (
+            <Experience
+              key={experience.period}
+              {...{ ...experience, index, expanded, setExpanded }}
+            />
+          ))}
+        </List>
+      </Container>
+    </Section>
+  );
+};
 
 export default Timeline;

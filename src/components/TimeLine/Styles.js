@@ -19,34 +19,6 @@ export const List = styled.div`
   }
 `;
 
-// const circleSize = 15;
-// const titleFontHeight = circleSize * 1.5;
-// const lineWidth = circleSize / 6;
-// const lineMargin = circleSize / 2 - lineWidth / 2;
-// const color = "#ffffff";
-
-// export const CircleContainer = styled.div`
-//   font-size: ${circleSize}px;
-//   height: ${titleFontHeight}px;
-//   color: ${color};
-//   display: flex;
-//   align-items: center;
-//   opacity: 0.5;
-// `;
-
-// export const LineContainer = styled.div`
-//   height: 100%;
-//   border-left: solid ${lineMargin}px #00000000;
-//   opacity: 0.5;
-// `;
-
-// export const Line = styled.div`
-//   height: 100%;
-//   background-color: ${color};
-//   width: ${lineWidth}px;
-//   border-radius: ${lineWidth}px;
-// `;
-
 export const Title = styled.div`
   font-size: 20px;
   height: 40px;
@@ -55,8 +27,9 @@ export const Title = styled.div`
   align-items: center;
   font-weight: 200;
   letter-spacing: 2px;
+  margin: 0;
   @media ${(props) => props.theme.breakpoints.lg} {
-    margin: auto;
+    margin: auto 20px;
   }
 `;
 
@@ -74,7 +47,7 @@ export const ExternalLink = styled.a`
     border-color: ${(props) => props.theme.colors.accent.primary};
   }
   @media ${(props) => props.theme.breakpoints.lg} {
-    margin: auto;
+    margin: auto 20px;
   }
 `;
 
@@ -85,6 +58,18 @@ export const Text = styled.div`
   align-items: center;
 `;
 
+export const BulletList = styled(List)`
+  height: fit-content;
+  transition: max-height ease-in-out 0.2s;
+  transition-delay: ${({ delay }) => (delay ? delay : 0)}s;
+
+  max-height: 100vh;
+  @media ${(props) => props.when} {
+    max-height: 0;
+    overflow: hidden;
+  }
+`;
+
 export const BulletContainer = styled.div`
   text-align: justify;
   text-justify: inter-word;
@@ -92,6 +77,14 @@ export const BulletContainer = styled.div`
   align-items: center;
   flex-direction: row;
   column-gap: 1.5rem;
+  transition: all ease-in-out 0.2s;
+  transition-delay: ${({ delay }) => (delay ? delay : 0)}s;
+
+  opacity: 1;
+
+  @media ${(props) => props.when} {
+    opacity: 0;
+  }
 `;
 
 export const BulletIcon = styled.div`
@@ -101,11 +94,11 @@ export const BulletIcon = styled.div`
 
 export const ExpandButton = styled.div`
   font-size: 16px;
-  min-width: 20rem;
+  width: 230px;
+  padding: 0 20px;
   height: 40px;
   display: flex;
   align-items: center;
-  justify-content: center;
   transition: all ease-in-out 0.5s;
 
   color: ${(props) => props.theme.colors.text.secondary};
@@ -122,14 +115,34 @@ export const ExpandButton = styled.div`
   }
 `;
 
-export const Reveal = styled.div`
-  visibility: visible;
-  opacity: 1;
-  transition: all 0s linear 0.33s, opacity 0.33s linear;
-  transition-delay: ${(props) => (props.delay ? delay : 0)};
+const circleSize = 16;
+const lineWidth = 2;
+const lineMargin = circleSize / 2 - lineWidth / 2;
 
-  @media ${(props) => props.when} {
-    visibility: hidden;
-    opacity: 0;
+export const Dot = styled.div`
+  font-size: ${circleSize}px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all ease-in-out 0.7s;
+  color: ${(props) => props.theme.colors.text.secondary};
+  @media ${(props) => !props.selected} {
+    color: ${(props) => props.theme.colors.accent.primary};
+  }
+`;
+
+export const Line = styled.div`
+  height: calc(100% - 40px);
+  width: ${lineWidth}px;
+  margin: auto ${lineMargin}px;
+
+  transition: all ease-in-out 0.7s;
+
+  background-color: ${(props) => props.theme.colors.text.secondary};
+
+  @media ${(props) => !props.selected} {
+    background-color: ${(props) => props.theme.colors.accent.primary};
   }
 `;
