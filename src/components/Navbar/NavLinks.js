@@ -6,7 +6,7 @@ import { NavLinksWrapper, NavLink } from "components/Navbar/Styles";
 const NavLinks = (props) => {
   return (
     <NavLinksWrapper {...props}>
-      {["Projects", "Skills", "About"].map((item) => (
+      {["Projects", "Skills", "Timeline"].map((item) => (
         <li key={item}>
           <Link href={"#" + item}>
             <NavLink>{item}</NavLink>

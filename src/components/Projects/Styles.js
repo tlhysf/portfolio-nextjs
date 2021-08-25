@@ -38,7 +38,7 @@ export const Paragraph = styled.p`
   text-align: justify;
 
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
 `;
 
 export const Card = styled.div`
@@ -49,7 +49,7 @@ export const Card = styled.div`
   overflow: hidden;
   position: relative;
   background-color: #ffffff10;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
 
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 90%;
@@ -120,7 +120,7 @@ export const Tag = styled.li`
 export const ExternalLink = styled.a`
   color: #f46737;
   font-size: 2rem;
-  transition: 0.5s;
+  transition: 0.3s;
   &:hover {
     color: #fff;
   }

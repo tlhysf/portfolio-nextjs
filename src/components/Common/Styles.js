@@ -3,8 +3,6 @@ import styled from "styled-components";
 const iconButton = (props) => props.theme.colors.iconButton;
 const zIndex = (props) => props.theme.zIndexes;
 
-export const boxShadow = "3px 3px 20px rgba(80, 78, 78, 0.5);";
-
 export const ButtonsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -109,20 +107,12 @@ export const TooltipPaper = styled.div`
   width: max-content;
 
   position: absolute;
-  top: -6rem;
-  left: -50%;
+  top: -40px;
 
-  transition: 0.6s ease;
+  background-color: ${(props) => props.theme.colors.bg.secondary};
+  color: ${(props) => props.theme.colors.text.primary};
 
-  background-color: #ffffff;
-  -webkit-backdrop-filter: blur(70px);
-  backdrop-filter: blur(70px);
-  box-shadow: ${boxShadow};
-  -moz-box-shadow: ${boxShadow};
-  -webkit-box-shadow: ${boxShadow};
-  color: black;
-
-  border-radius: 0.5rem;
-  padding: 1rem;
-  font-size: 1.5rem;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 14px;
 `;

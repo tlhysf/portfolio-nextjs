@@ -13,6 +13,8 @@ import {
   Line,
 } from "components/Timeline/Styles";
 
+import Tooltip from "components/Common/Tooltip";
+
 import { FiChevronsRight, FiCircle } from "react-icons/fi";
 
 const Experience = ({
@@ -25,6 +27,7 @@ const Experience = ({
   index,
   expanded,
   setExpanded,
+  widthFactor,
 }) => {
   const isExpanded = expanded === index;
 
@@ -41,18 +44,21 @@ const Experience = ({
       </List>
 
       <List row responsive>
-        <ExpandButton
-          selected={isExpanded}
-          onClick={(e) => setExpanded((x) => (x === index ? null : index))}
-        >
-          {period}
-        </ExpandButton>
+        <Tooltip content={isExpanded ? "Minimize" : "Expand"}>
+          <ExpandButton
+            selected={isExpanded}
+            widthFactor={widthFactor}
+            onClick={(e) => setExpanded((x) => (x === index ? null : index))}
+          >
+            {period}
+          </ExpandButton>
+        </Tooltip>
 
         <List>
           <List row responsive noGap>
             <Title>{title}</Title>
             <ExternalLink href={link} target="_blank">
-              @&nbsp;{place}
+              <Tooltip content={"Go to " + link}>@&nbsp;{place}</Tooltip>
             </ExternalLink>
           </List>
 
@@ -76,6 +82,10 @@ const Experience = ({
                   <Text>{bullet}</Text>
                 </BulletContainer>
               ))}
+              <BulletContainer
+                when={isExpanded}
+                delay={delay(bullets.length)}
+              />
             </BulletList>
           ) : null}
         </List>

@@ -36,7 +36,7 @@ export const Title = styled.div`
 export const ExternalLink = styled.a`
   font-size: 20px;
   font-style: italic;
-  transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.3s;
   color: ${(props) => props.theme.colors.accent.primary};
   border-bottom: solid 1px;
   border-color: #00000000;
@@ -60,7 +60,7 @@ export const Text = styled.div`
 
 export const BulletList = styled(List)`
   height: fit-content;
-  transition: max-height ease-in-out 0.2s;
+  transition: max-height ease-in-out 0.3s;
   transition-delay: ${({ delay }) => (delay ? delay : 0)}s;
 
   max-height: 100vh;
@@ -77,7 +77,7 @@ export const BulletContainer = styled.div`
   align-items: center;
   flex-direction: row;
   column-gap: 1.5rem;
-  transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.3s;
   transition-delay: ${({ delay }) => (delay ? delay : 0)}s;
 
   opacity: 1;
@@ -94,12 +94,12 @@ export const BulletIcon = styled.div`
 
 export const ExpandButton = styled.div`
   font-size: 16px;
-  width: 230px;
+  width: ${(props) => props.widthFactor * 10.5}px;
   padding: 0 20px;
   height: 40px;
   display: flex;
   align-items: center;
-  transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.3s;
 
   color: ${(props) => props.theme.colors.text.secondary};
 
