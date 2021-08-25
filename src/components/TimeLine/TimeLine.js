@@ -4,11 +4,8 @@ import {
   Section,
   SectionDivider,
   SectionTitle,
-  SectionText,
 } from "components/Common/SectionStyles";
-
-import { Container, List } from "components/Timeline/Styles";
-
+import { List } from "components/Timeline/Styles";
 import Experience from "components/Timeline/Experience";
 
 import { timeline } from "data/timeline";
@@ -20,10 +17,9 @@ const Timeline = () => {
 
   return (
     <Section fullHeight nopadding id="Timeline">
-      <SectionDivider colorAlt divider xMargin />
-      <SectionTitle xMargin>Timeline</SectionTitle>
-      <br />
-      <Container xMargin>
+      <SectionDivider />
+      <SectionTitle>Timeline</SectionTitle>
+      <div>
         <List noGap>
           {timeline.map((experience, index) => (
             <Experience
@@ -32,7 +28,7 @@ const Timeline = () => {
             />
           ))}
         </List>
-      </Container>
+      </div>
     </Section>
   );
 };

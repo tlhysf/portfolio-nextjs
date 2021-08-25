@@ -6,19 +6,22 @@ export default {
   },
   // Colors for layout
   colors: {
-    primary1: "andy haynes(204,23.8%,95.9%)",
-    accent1: "hsl(34.9,98.6%,72.9%)",
-    button: "hsl(205.1,100%,36.1%)",
-    background2: "hsl(232.7,27.3%,23.7%)",
-
     accent: {
       primary: "#f56038",
+      secondary: "#945DD6",
+      tertiary: "#13ADC7",
       hover: "#112240",
     },
 
     text: {
       primary: "#ccd6f6",
       secondary: "#8892b0",
+    },
+
+    gradients: {
+      primary: "linear-gradient(270deg, #f56038 0%, #945DD6 100%)",
+      secondary: "linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)",
+      text: "linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%)",
     },
 
     bg: {

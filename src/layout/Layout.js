@@ -36,7 +36,7 @@ export const Layout = ({ children, scroll }) => {
     <Container>
       <Sidebar {...{ toggleSidebar, openSidebar }} />
       <SocialLinksFAB />
-      <Navbar {...{ toggleSidebar, openSidebar, scroll }} />
+      {/* <Navbar {...{ toggleSidebar, openSidebar, scroll }} /> */}
       <main>{children}</main>
       <Footer />
     </Container>

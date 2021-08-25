@@ -1,12 +1,5 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  display: flex;
-  @media ${(props) => props.theme.breakpoints.xl} {
-    margin: 0 ${(props) => (props.xMargin ? "6rem" : 0)};
-  }
-`;
-
 export const List = styled.div`
   display: flex;
   flex-direction: ${(props) => (props.row ? "row" : "column")};
@@ -19,35 +12,45 @@ export const List = styled.div`
   }
 `;
 
-export const Title = styled.div`
+const HeaderText = styled.a`
   font-size: 20px;
   height: 40px;
-  color: ${(props) => props.theme.colors.text.primary};
+  transition: all ease-in-out 0.3s;
   display: flex;
   align-items: center;
-  font-weight: 200;
-  letter-spacing: 2px;
-  margin: 0;
+  margin-right: 5px;
+
   @media ${(props) => props.theme.breakpoints.lg} {
-    margin: auto 20px;
+    font-size: 20px;
+    height: 42px;
+  }
+
+  @media ${(props) => props.theme.breakpoints.md} {
+    font-size: 18px;
+    height: 38px;
+  }
+
+  @media ${(props) => props.theme.breakpoints.sm} {
+    font-size: 16px;
+    height: 34px;
   }
 `;
 
-export const ExternalLink = styled.a`
-  font-size: 20px;
+export const Title = styled(HeaderText)`
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: ${(props) => props.theme.colors.text.primary};
+`;
+
+export const ExternalLink = styled(HeaderText)`
   font-style: italic;
-  transition: all ease-in-out 0.3s;
   color: ${(props) => props.theme.colors.accent.primary};
   border-bottom: solid 1px;
   border-color: #00000000;
   width: fit-content;
-  height: fit-content;
-  margin: auto 5px;
+
   &:hover {
     border-color: ${(props) => props.theme.colors.accent.primary};
-  }
-  @media ${(props) => props.theme.breakpoints.lg} {
-    margin: auto 20px;
   }
 `;
 
@@ -81,7 +84,6 @@ export const BulletContainer = styled.div`
   transition-delay: ${({ delay }) => (delay ? delay : 0)}s;
 
   opacity: 1;
-
   @media ${(props) => props.when} {
     opacity: 0;
   }
@@ -139,9 +141,7 @@ export const Line = styled.div`
   margin: auto ${lineMargin}px;
 
   transition: all ease-in-out 0.7s;
-
   background-color: ${(props) => props.theme.colors.text.secondary};
-
   @media ${(props) => !props.selected} {
     background-color: ${(props) => props.theme.colors.accent.primary};
   }
