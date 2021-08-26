@@ -6,7 +6,7 @@ import {
   SectionTitle,
 } from "components/Common/SectionStyles";
 import { List } from "components/Timeline/Styles";
-import Experience from "components/Timeline/Experience";
+import Step from "components/Timeline/Step";
 
 import { timeline } from "data/timeline";
 
@@ -16,15 +16,22 @@ const Timeline = () => {
   const widthFactor = Math.max(...timeline.map((x) => x.period.length));
 
   return (
-    <Section fullHeight nopadding id="Timeline">
+    <Section fullHeight nopadding id="Timeline" flexCenter>
       <SectionDivider />
       <SectionTitle>Timeline</SectionTitle>
       <div>
         <List noGap>
-          {timeline.map((experience, index) => (
-            <Experience
-              key={experience.period}
-              {...{ ...experience, index, expanded, setExpanded, widthFactor }}
+          {timeline.map((data, index) => (
+            <Step
+              key={data.period}
+              {...{
+                data,
+                index,
+                expanded,
+                setExpanded,
+                widthFactor,
+                last: index === timeline.length - 1,
+              }}
             />
           ))}
         </List>

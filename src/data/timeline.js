@@ -32,4 +32,33 @@ export const timeline = [
     ],
     link: "https://www.carepvtltd.com/",
   },
+  {
+    period: "April 2018 - Sep 2019",
+    title: "Embedded Systems Developer",
+    place: "Genes and Machines",
+    description:
+      "A startup focused on developing an interdisciplinary knowledge community in Pakistan for Life Sciences.",
+    bullets: [
+      "Developed embedded hardware and software for point-of-care blood testing devices.",
+    ],
+    link: "https://www.facebook.com/GenesMachines.io",
+  },
+  {
+    period: "Feb 2018 - Sep 2019",
+    title: "Co-founder/Embedded Systems Developer",
+    place: "Uproot",
+    bullets: [
+      "Developed embedded hardware and software for automation of hydroponics farms.",
+      "Delivered prototypes while keeping the supply chain as minimalistic as possible.",
+      "Worked with diverse team-members with electrical engineering, applied bio-science and industrial design background to come up with solutions.",
+      "Worked with contractors and vendors to support design efforts.",
+      "Worked on business development.",
+    ],
+  },
+  {
+    period: "Class of 2018",
+    title: "Graduated, Electrical Engineering",
+    place: "NUST",
+    link: "https://nust.edu.pk/",
+  },
 ];

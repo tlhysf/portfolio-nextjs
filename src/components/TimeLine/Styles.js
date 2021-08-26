@@ -49,8 +49,11 @@ export const ExternalLink = styled(HeaderText)`
   border-color: #00000000;
   width: fit-content;
 
-  &:hover {
-    border-color: ${(props) => props.theme.colors.accent.primary};
+  @media ${({ disableHover }) => disableHover} {
+    &:hover {
+      /* border-color: ${(props) => props.theme.colors.accent.primary}; */
+      text-decoration: underline;
+    }
   }
 `;
 
