@@ -149,7 +149,7 @@ export const ExternalLink = styled(HeaderText)`
 export const Text = styled.div`
   font-size: 14px;
   color: ${(props) =>
-    props.theme.colors.text[props.alt ? "primary" : "secondary"]};
+    props.theme.colors.text[props.bright ? "primary" : "secondary"]};
   display: flex;
   align-items: center;
 `;

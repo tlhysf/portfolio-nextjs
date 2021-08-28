@@ -17,8 +17,8 @@ const Projects = () => {
       <SectionDivider />
       <SectionTitle>Projects</SectionTitle>
       <Grid>
-        {projects.map((data) => (
-          <Project key={data.name} {...{ data }} />
+        {projects.map((data, index) => (
+          <Project key={data.title + String(index)} {...{ data }} />
         ))}
       </Grid>
       <br />

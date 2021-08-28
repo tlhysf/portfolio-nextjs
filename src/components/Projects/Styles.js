@@ -6,7 +6,7 @@ export const Grid = styled.section`
   column-gap: 2rem;
   row-gap: 2rem;
 
-  @media ${(props) => props.theme.breakpoints.md} {
+  @media ${(props) => props.theme.breakpoints.lg} {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -15,7 +15,7 @@ export const Grid = styled.section`
   }
 `;
 
-export const Drawer = styled.p`
+export const Drawer = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
@@ -47,15 +47,16 @@ export const Image = styled.img`
 export const Card = styled.div`
   position: relative;
   overflow: hidden;
-  width: 100%;
   background-color: ${(props) => props.theme.colors.bg.secondary};
 
   transition: 0.3s ease-in-out;
 
-  height: 40rem;
+  width: 100%;
+  height: 100%;
 
   &:hover {
-    height: 40.6rem;
+    width: 101%;
+    height: 101%;
   }
 
   &:hover ${Image} {
@@ -67,6 +68,9 @@ export const Container = styled.div`
   width: 100%;
   column-gap: 10px;
   row-gap: 10px;
+
+  padding: ${({ smallPadding, largePadding }) =>
+    smallPadding ? "15px 15px" : largePadding ? "15px 30px" : 0};
 
   height: 100%;
   display: flex;
@@ -82,9 +86,6 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
   }
-
-  padding: ${({ smallPadding, largePadding }) =>
-    smallPadding ? "15px 15px" : largePadding ? "15px 30px" : 0};
 `;
 
 export const Divider = styled.hr`
@@ -94,7 +95,15 @@ export const Divider = styled.hr`
   background: ${(props) => props.theme.colors.gradients.primary};
 `;
 
+export const TagList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 5px;
+  row-gap: 5px;
+`;
+
 export const Tag = styled.div`
+  max-width: fit-content;
   color: ${(props) => props.theme.colors.text.primary};
   background-color: ${(props) => props.theme.colors.accent.hover};
 

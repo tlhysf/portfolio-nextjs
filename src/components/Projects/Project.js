@@ -5,6 +5,7 @@ import Tooltip from "components/Common/Tooltip";
 import {
   Drawer,
   Card,
+  TagList,
   Tag,
   Divider,
   Image,
@@ -22,7 +23,7 @@ const Project = ({ data }) => {
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const actions = (
-    <Container row smallGap>
+    <Container row>
       <List row smallGap>
         <ExternalLink href={demo} tagret="_blank" altHover>
           <Tooltip content="Demo">
@@ -49,19 +50,20 @@ const Project = ({ data }) => {
           <List smallGap>
             <Divider length={title.length} />
             <Title>{title}</Title>
-            <List row smallGap>
+            <TagList>
               {tags.map((tag, index) => (
-                <Tag key={tag + index}>{tag}</Tag>
+                <Tag key={tag + String(index)}>{tag}</Tag>
               ))}
-            </List>
+            </TagList>
           </List>
+          <br />
           {actions}
         </Container>
       </Container>
       <Drawer open={openDrawer}>
         <Container largePadding>
           <div />
-          <Text alt>{description}</Text>
+          <Text bright>{description}</Text>
           {actions}
         </Container>
       </Drawer>
