@@ -2,16 +2,14 @@ import React from "react";
 
 import {
   ExpandButton,
-  List,
-  Title,
-  ExternalLink,
-  Text,
   BulletContainer,
   BulletIcon,
   BulletList,
   Dot,
   Line,
 } from "components/Timeline/Styles";
+
+import { List, Title, ExternalLink, Text } from "components/Common/Styles";
 
 import Tooltip from "components/Common/Tooltip";
 
@@ -96,7 +94,7 @@ const Step = ({ data, index, expanded, setExpanded, widthFactor, last }) => {
       </List>
       <List row responsive>
         {expandButton}
-        <List noGap={last && isExpanded}>
+        <List noGap={last}>
           {header}
           <BulletList when={isExpanded} delay={delay()}>
             {subHeader}

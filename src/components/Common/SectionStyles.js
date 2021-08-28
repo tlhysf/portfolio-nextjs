@@ -25,10 +25,6 @@ export const Section = styled.section`
     margin: 0 4rem;
     flex-direction: column;
   }
-
-  @media ${(props) => !props.flexCenter} {
-    justify-content: center;
-  }
 `;
 
 export const SectionDivider = styled.div`
@@ -37,18 +33,16 @@ export const SectionDivider = styled.div`
   border-radius: 10px;
   background-color: #fff;
   background: ${(props) => props.theme.colors.gradients.primary};
-
-  /* margin-top: 8rem; */
   margin-bottom: 2rem;
 
-  /* @media ${(props) => props.theme.breakpoints.md} {
+  margin-top: 8rem;
+  @media ${(props) => props.theme.breakpoints.md} {
     margin-top: 4rem;
-  } */
-
-  /* @media ${(props) => props.theme.breakpoints.sm} {
+  }
+  @media ${(props) => props.theme.breakpoints.sm} {
     margin-top: 0;
     height: 0.5rem;
-  } */
+  }
 `;
 
 export const SectionTitle = styled.h2`

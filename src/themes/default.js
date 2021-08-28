@@ -1,10 +1,8 @@
 export default {
-  // Temp fonts
   fonts: {
     title: "Space Grotesk, sans-serif",
     main: "Space Grotesk, sans-serif",
   },
-  // Colors for layout
   colors: {
     accent: {
       primary: "#f56038",
@@ -27,6 +25,7 @@ export default {
     bg: {
       primary: "#020c1b",
       secondary: "#0a192f",
+      tertiary: "#010813",
     },
 
     logo: {

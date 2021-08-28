@@ -5,7 +5,9 @@ import {
   SectionDivider,
   SectionTitle,
 } from "components/Common/SectionStyles";
-import { List } from "components/Timeline/Styles";
+
+import { List } from "components/Common/Styles";
+
 import Step from "components/Timeline/Step";
 
 import { timeline } from "data/timeline";
@@ -16,26 +18,26 @@ const Timeline = () => {
   const widthFactor = Math.max(...timeline.map((x) => x.period.length));
 
   return (
-    <Section fullHeight nopadding id="Timeline" flexCenter>
+    <Section fullHeight nopadding id="Timeline">
       <SectionDivider />
       <SectionTitle>Timeline</SectionTitle>
-      <div>
-        <List noGap>
-          {timeline.map((data, index) => (
-            <Step
-              key={data.period}
-              {...{
-                data,
-                index,
-                expanded,
-                setExpanded,
-                widthFactor,
-                last: index === timeline.length - 1,
-              }}
-            />
-          ))}
-        </List>
-      </div>
+      <List noGap>
+        {timeline.map((data, index) => (
+          <Step
+            key={data.period}
+            {...{
+              data,
+              index,
+              expanded,
+              setExpanded,
+              widthFactor,
+              last: index === timeline.length - 1,
+            }}
+          />
+        ))}
+      </List>
+      <br />
+      <br />
     </Section>
   );
 };
