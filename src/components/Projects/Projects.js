@@ -1,13 +1,13 @@
 import React from "react";
 
-import { Grid } from "components/Projects/Styles";
-import Project from "components/Projects/Project";
+import { Grid } from "./Styles";
+import Project from "./Project";
 
 import {
   Section,
   SectionDivider,
   SectionTitle,
-} from "components/Common/SectionStyles";
+} from "components/Common/Section";
 
 import { projects } from "data/projects";
 

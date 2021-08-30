@@ -1,36 +1,56 @@
 import React from "react";
 
 import { AiFillGithub, AiFillMail, AiFillLinkedin } from "react-icons/ai";
-import { ButtonsWrapper, SocialIcons } from "components/Common/Styles";
+import { ButtonGroup, IconButton } from "components/Common/Buttons";
+
+const socials = [
+  {
+    name: "github",
+    link: "http://www.github.com/tlhysf",
+    icon: <AiFillGithub />,
+    external: true,
+  },
+  {
+    name: "linkedin",
+    link: "http://www.linkedin.com/in/talha-yousuf",
+    icon: <AiFillLinkedin />,
+    external: true,
+  },
+  {
+    name: "mail",
+    link: "#contact",
+    icon: <AiFillMail />,
+    external: false,
+  },
+];
+
+const getColor = (name) => {
+  switch (name) {
+    case "github":
+      return "indigo";
+    case "linkedin":
+      return "blueviolet";
+    case "mail":
+      return "crimson";
+    default:
+      return "gray";
+  }
+};
 
 const SocialLinks = (props) => {
   return (
-    <ButtonsWrapper {...props}>
-      <SocialIcons
-        key="github"
-        name="github"
-        target="_blank"
-        href="http://www.github.com/tlhysf"
-      >
-        <AiFillGithub />
-      </SocialIcons>
-      <SocialIcons
-        key={2}
-        target="_blank"
-        name="linkedin"
-        key="linkedin"
-        href="http://www.linkedin.com/in/talha-yousuf"
-      >
-        <AiFillLinkedin />
-      </SocialIcons>
-      <SocialIcons
-        name="mail"
-        key="mail"
-        onClick={() => console.log("talhayousuf.work@gmail.com")}
-      >
-        <AiFillMail />
-      </SocialIcons>
-    </ButtonsWrapper>
+    <ButtonGroup {...props}>
+      {socials.map(({ name, link, icon, external }) => (
+        <IconButton
+          key={name}
+          color={getColor(name)}
+          target={external ? "_blank" : ""}
+          href={link}
+        >
+          {icon}
+        </IconButton>
+      ))}
+    </ButtonGroup>
   );
 };
 export default SocialLinks;

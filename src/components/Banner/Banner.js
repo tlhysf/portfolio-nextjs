@@ -1,21 +1,16 @@
 import React from "react";
 
-import {
-  Section,
-  SectionText,
-  SectionTitle,
-  SectionDivider,
-} from "components/Common/SectionStyles";
-import { CTAButton } from "components/Common/Styles";
-import { BannerContent, BannerBgContainer } from "components/Banner/Styles";
+import { Section, SectionText, SectionTitle } from "components/Common/Section";
+import { Button } from "components/Common/Buttons";
 import BackgroundAnimation from "components/Common/BackgroundAnimation";
+
+import { BannerContent, BannerBgContainer } from "./Styles";
 
 const Banner = () => (
   <div>
     <Section nopadding fullHeight>
       <BannerBgContainer>
         <BackgroundAnimation />
-        {/* <img src="images/banner-bg.gif" alt="banner" /> */}
       </BannerBgContainer>
       <BannerContent>
         <SectionTitle main center>
@@ -27,7 +22,7 @@ const Banner = () => (
           I'm a Full Stack Web Developer.
           <br />I stare at a glowing rectangle all day.
         </SectionText>
-        <CTAButton>Get In Touch</CTAButton>
+        <Button>Get In Touch</Button>
       </BannerContent>
     </Section>
   </div>

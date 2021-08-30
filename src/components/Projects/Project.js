@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import { Title, ExternalLink, Text, List } from "components/Common/Misc";
 import Tooltip from "components/Common/Tooltip";
 
 import {
@@ -11,9 +12,7 @@ import {
   Image,
   Container,
   Button,
-} from "components/Projects/Styles";
-
-import { Title, ExternalLink, Text, List } from "components/Common/Styles";
+} from "./Styles";
 
 import { VscGithubAlt, VscLinkExternal } from "react-icons/vsc";
 
@@ -22,7 +21,7 @@ const Project = ({ data }) => {
 
   const [openDrawer, setOpenDrawer] = useState(false);
 
-  const actions = (
+  const actions = (drawer) => (
     <Container row>
       <List row smallGap>
         <ExternalLink href={demo} tagret="_blank" altHover>
@@ -37,7 +36,7 @@ const Project = ({ data }) => {
         </ExternalLink>
       </List>
       <Button onClick={(e) => setOpenDrawer((x) => !x)}>
-        {openDrawer ? "Close" : "Description"}
+        {drawer ? "Close" : "Description"}
       </Button>
     </Container>
   );
@@ -57,14 +56,14 @@ const Project = ({ data }) => {
             </TagList>
           </List>
           <br />
-          {actions}
+          {actions()}
         </Container>
       </Container>
       <Drawer open={openDrawer}>
         <Container largePadding>
           <div />
           <Text bright>{description}</Text>
-          {actions}
+          {actions(true)}
         </Container>
       </Drawer>
     </Card>

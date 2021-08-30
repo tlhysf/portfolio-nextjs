@@ -11,7 +11,7 @@ export const TooltipPaper = styled.div`
   top: -40px;
 
   background-color: #00000090;
-  color: ${(props) => props.theme.colors.text.primary};
+  color: #ffffff99;
 
   border-radius: 5px;
   padding: 5px;

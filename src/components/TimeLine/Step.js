@@ -9,7 +9,7 @@ import {
   Line,
 } from "components/Timeline/Styles";
 
-import { List, Title, ExternalLink, Text } from "components/Common/Styles";
+import { List, Title, ExternalLink, Text } from "components/Common/Misc";
 
 import Tooltip from "components/Common/Tooltip";
 

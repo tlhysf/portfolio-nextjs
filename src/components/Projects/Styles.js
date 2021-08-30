@@ -51,12 +51,12 @@ export const Card = styled.div`
 
   transition: 0.3s ease-in-out;
 
-  width: 100%;
-  height: 100%;
+  width: 99%;
+  height: 99%;
 
   &:hover {
-    width: 101%;
-    height: 101%;
+    width: 100%;
+    height: 100%;
   }
 
   &:hover ${Image} {
@@ -118,7 +118,7 @@ export const Button = styled.div`
 
   font-size: 14px;
   padding: 5px 10px;
-  border-radius: 2px;
+  border-radius: 14px;
 
   &:hover {
     background-color: ${(props) => props.theme.colors.text.primary};

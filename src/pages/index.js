@@ -26,9 +26,9 @@ const Home = () => {
   return (
     <Layout scroll={scroll}>
       <Banner />
-      <Projects />
       <Skills />
       <Timeline />
+      <Projects />
     </Layout>
   );
 };

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-import Footer from "components/Footer/Footer";
-import Navbar from "components/Navbar/Navbar";
-import Sidebar from "components/Sidebar/Sidebar";
-import SocialLinksFAB from "components/Common/SociaLinksFAB";
+import Footer from "components/Navigation/Footer";
+import Navbar from "components/Navigation/Navbar";
+import Sidebar from "components/Navigation/Sidebar";
+
+import FABs from "components/Common/FABs";
 
 import { Container } from "layout/LayoutStyles";
 
@@ -35,8 +36,8 @@ export const Layout = ({ children, scroll }) => {
   return (
     <Container>
       <Sidebar {...{ toggleSidebar, openSidebar }} />
-      <SocialLinksFAB />
-      {/* <Navbar {...{ toggleSidebar, openSidebar, scroll }} /> */}
+      <FABs />
+      <Navbar {...{ toggleSidebar, openSidebar, scroll }} />
       <main>{children}</main>
       <Footer />
     </Container>

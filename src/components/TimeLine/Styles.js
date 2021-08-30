@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { List } from "components/Common/Styles";
+import { List } from "components/Common/Misc";
 
 export const BulletList = styled(List)`
   height: fit-content;

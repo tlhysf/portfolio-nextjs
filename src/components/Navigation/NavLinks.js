@@ -1,12 +1,14 @@
 import React from "react";
 import Link from "next/link";
 
-import { NavLinksWrapper, NavLink } from "components/Navbar/Styles";
+import { NavLinksWrapper, NavLink } from "./Styles";
+
+const sections = ["About", "Timeline", "Projects"];
 
 const NavLinks = (props) => {
   return (
     <NavLinksWrapper {...props}>
-      {["Projects", "Skills", "Timeline"].map((item) => (
+      {sections.map((item) => (
         <li key={item}>
           <Link href={"#" + item}>
             <NavLink>{item}</NavLink>

@@ -4,9 +4,9 @@ import {
   Section,
   SectionDivider,
   SectionTitle,
-} from "components/Common/SectionStyles";
+} from "components/Common/Section";
 
-import { List } from "components/Common/Styles";
+import { List } from "components/Common/Misc";
 
 import Step from "components/Timeline/Step";
 

@@ -28,11 +28,6 @@ export default {
       tertiary: "#010813",
     },
 
-    logo: {
-      main: "#ffffff",
-      active: "#ffffff70",
-    },
-
     navLink: {
       primary: {
         main: {

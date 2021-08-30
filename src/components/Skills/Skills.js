@@ -5,7 +5,7 @@ import {
   SectionDivider,
   SectionText,
   SectionTitle,
-} from "components/Common/SectionStyles";
+} from "components/Common/Section";
 
 import {
   List,
