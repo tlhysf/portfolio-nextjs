@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react";
 
-// import Acomplishments from "../components/Acomplishments/Acomplishments";
 import Banner from "../components/Banner/Banner";
 import Projects from "../components/Projects/Projects";
 import Skills from "../components/Skills/Skills";
 import Timeline from "components/Timeline/Timeline";
-// import Timeline from "../components/TimeLine/TimeLine";
+import Gallery from "components/Common/Gallery";
 import { Layout } from "../layout/Layout";
 
 const Home = () => {
+  const [galleryState, setGalleryState] = useState({
+    title: "",
+    images: [],
+    open: false,
+  });
+
   // state to keep track of how many px scrolled
   const [scroll, setScroll] = useState({ y: 0, yUpward: true });
 
@@ -25,10 +30,11 @@ const Home = () => {
 
   return (
     <Layout scroll={scroll}>
+      <Gallery {...{ galleryState, setGalleryState }} />
       <Banner />
       <Skills />
       <Timeline />
-      <Projects />
+      <Projects {...{ setGalleryState }} />
     </Layout>
   );
 };

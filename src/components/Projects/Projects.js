@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import { Grid } from "./Styles";
 import Project from "./Project";
-import Gallery from "./Gallery";
 
 import {
   Section,
@@ -12,13 +11,7 @@ import {
 
 import { projects } from "data/projects";
 
-const Projects = () => {
-  const [galleryState, setGalleryState] = useState({
-    title: "",
-    images: [],
-    open: false,
-  });
-
+const Projects = ({ setGalleryState }) => {
   return (
     <Section fullHeight nopadding id="Projects">
       <SectionDivider />
@@ -33,7 +26,6 @@ const Projects = () => {
       </Grid>
       <br />
       <br />
-      <Gallery {...{ galleryState, setGalleryState }} />
     </Section>
   );
 };

@@ -47,7 +47,18 @@ const Project = ({ data, setGalleryState }) => {
   return (
     <Card>
       <Container>
-        <Image src={images ? images[0] : ""} alt={title} />
+        {images ? (
+          <ImageContainer>
+            <Image fullWidth src={images[0]} alt={title} />
+
+            <GalleryButton
+              onClick={(e) => setGalleryState({ images, title, open: true })}
+            >
+              <VscZoomIn />
+            </GalleryButton>
+          </ImageContainer>
+        ) : null}
+
         <Container smallPadding>
           <List smallGap>
             <Divider length={title.length} />
@@ -66,21 +77,6 @@ const Project = ({ data, setGalleryState }) => {
         <Container smallPadding>
           <DescriptionContainer>
             <Text bright>{description}</Text>
-            {images
-              ? images.map((image) => (
-                  <ImageContainer key={image}>
-                    <Image fullWidth src={image} alt={title} />
-
-                    <GalleryButton
-                      onClick={(e) =>
-                        setGalleryState({ images, title, open: true })
-                      }
-                    >
-                      <VscZoomIn />
-                    </GalleryButton>
-                  </ImageContainer>
-                ))
-              : null}
           </DescriptionContainer>
           {actions(true)}
         </Container>

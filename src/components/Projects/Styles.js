@@ -55,14 +55,17 @@ export const GalleryButton = styled.div`
   align-items: center;
   color: #00000070;
 
-  font-size: 6rem;
+  font-size: 4rem;
 
   opacity: 0;
-  transition: 0.3s ease-in-out;
+  transition: 0.2s ease-in-out;
 
   &:hover {
     opacity: 1;
     cursor: pointer;
+  }
+  &:active {
+    font-size: 3rem;
   }
 `;
 

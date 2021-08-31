@@ -82,5 +82,6 @@ export default {
   zIndexes: {
     navbar: "10",
     drawer: "11",
+    gallery: "12",
   },
 };
