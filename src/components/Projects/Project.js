@@ -10,11 +10,11 @@ import {
   Tag,
   Divider,
   Image,
-  Container,
+  CardMarkup,
   DescriptionContainer,
   ImageContainer,
-  GalleryButton,
-  Button,
+  ImageButton,
+  DescriptionButton,
 } from "./Styles";
 
 import { VscGithubAlt, VscLinkExternal, VscZoomIn } from "react-icons/vsc";
@@ -25,7 +25,7 @@ const Project = ({ data, setGalleryState }) => {
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const actions = (drawer) => (
-    <Container row>
+    <CardMarkup row>
       <List row smallGap>
         <ExternalLink href={demo} target="_blank" altHover>
           <Tooltip content="Demo">
@@ -38,28 +38,28 @@ const Project = ({ data, setGalleryState }) => {
           </Tooltip>
         </ExternalLink>
       </List>
-      <Button onClick={(e) => setOpenDrawer((x) => !x)}>
+      <DescriptionButton onClick={(e) => setOpenDrawer((x) => !x)}>
         {drawer ? "Close" : "Description"}
-      </Button>
-    </Container>
+      </DescriptionButton>
+    </CardMarkup>
   );
 
   return (
     <Card>
-      <Container>
+      <CardMarkup>
         {images ? (
           <ImageContainer>
             <Image fullWidth src={images[0]} alt={title} />
 
-            <GalleryButton
+            <ImageButton
               onClick={(e) => setGalleryState({ images, title, open: true })}
             >
               <VscZoomIn />
-            </GalleryButton>
+            </ImageButton>
           </ImageContainer>
         ) : null}
 
-        <Container smallPadding>
+        <CardMarkup smallPadding>
           <List smallGap>
             <Divider length={title.length} />
             <Title>{title}</Title>
@@ -71,15 +71,15 @@ const Project = ({ data, setGalleryState }) => {
           </List>
           <br />
           {actions()}
-        </Container>
-      </Container>
+        </CardMarkup>
+      </CardMarkup>
       <Drawer open={openDrawer}>
-        <Container smallPadding>
+        <CardMarkup smallPadding>
           <DescriptionContainer>
             <Text bright>{description}</Text>
           </DescriptionContainer>
           {actions(true)}
-        </Container>
+        </CardMarkup>
       </Drawer>
     </Card>
   );

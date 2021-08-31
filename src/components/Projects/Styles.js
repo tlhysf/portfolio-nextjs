@@ -43,7 +43,7 @@ export const ImageContainer = styled.div`
   max-height: min-content;
 `;
 
-export const GalleryButton = styled.div`
+export const ImageButton = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -72,7 +72,6 @@ export const GalleryButton = styled.div`
 export const Image = styled.img`
   width: ${(props) => (props.fullWidth ? "100%" : "95%")};
   margin: 0 auto;
-  margin-top: 10px;
   opacity: 0.9;
   transition: 0.3s ease-in-out;
 `;
@@ -97,7 +96,7 @@ export const Card = styled.div`
   }
 `;
 
-export const Container = styled.div`
+export const CardMarkup = styled.div`
   width: 100%;
   column-gap: 10px;
   row-gap: 10px;
@@ -118,25 +117,6 @@ export const Container = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-  }
-`;
-
-export const DescriptionContainer = styled.div`
-  max-width: 300px;
-  margin: 0 auto;
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-  padding: 10px;
-
-  overflow-y: auto;
-  ::-webkit-scrollbar {
-    width: 4px;
-    border-left: 4px solid ${(props) => props.theme.colors.text.secondary};
-  }
-  ::-webkit-scrollbar-thumb {
-    background: ${(props) => props.theme.colors.accent.primary};
   }
 `;
 
@@ -164,16 +144,36 @@ export const Tag = styled.div`
   border-radius: 5px;
 `;
 
-export const Button = styled.div`
-  background-color: ${(props) => props.theme.colors.text.secondary};
-  color: ${(props) => props.theme.colors.bg.tertiary};
+export const DescriptionContainer = styled.div`
+  max-width: 300px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 10px;
+
+  overflow-y: auto;
+  ::-webkit-scrollbar {
+    width: 4px;
+    border-left: 4px solid ${(props) => props.theme.colors.text.secondary};
+  }
+  ::-webkit-scrollbar-thumb {
+    background: ${(props) => props.theme.colors.accent.primary};
+  }
+`;
+
+export const DescriptionButton = styled.div`
+  background-color: ${(props) => props.theme.colors.bg.tertiary};
+  color: ${(props) => props.theme.colors.text.secondary};
 
   font-size: 14px;
   padding: 5px 10px;
-  border-radius: 14px;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.text.primary};
+    color: ${(props) => props.theme.colors.text.primary};
     cursor: pointer;
   }
 `;
