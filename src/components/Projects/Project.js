@@ -11,25 +11,28 @@ import {
   Divider,
   Image,
   Container,
+  DescriptionContainer,
+  ImageContainer,
+  GalleryButton,
   Button,
 } from "./Styles";
 
-import { VscGithubAlt, VscLinkExternal } from "react-icons/vsc";
+import { VscGithubAlt, VscLinkExternal, VscZoomIn } from "react-icons/vsc";
 
-const Project = ({ data }) => {
-  const { title, description, image, tags, source, demo } = data;
+const Project = ({ data, setGalleryState }) => {
+  const { title, description, images, tags, source, demo } = data;
 
   const [openDrawer, setOpenDrawer] = useState(false);
 
   const actions = (drawer) => (
     <Container row>
       <List row smallGap>
-        <ExternalLink href={demo} tagret="_blank" altHover>
+        <ExternalLink href={demo} target="_blank" altHover>
           <Tooltip content="Demo">
             <VscLinkExternal />
           </Tooltip>
         </ExternalLink>
-        <ExternalLink href={source} tagret="_blank" altHover>
+        <ExternalLink href={source} target="_blank" altHover>
           <Tooltip content="Code">
             <VscGithubAlt />
           </Tooltip>
@@ -44,7 +47,7 @@ const Project = ({ data }) => {
   return (
     <Card>
       <Container>
-        <Image src={image} alt={title} />
+        <Image src={images ? images[0] : ""} alt={title} />
         <Container smallPadding>
           <List smallGap>
             <Divider length={title.length} />
@@ -60,9 +63,25 @@ const Project = ({ data }) => {
         </Container>
       </Container>
       <Drawer open={openDrawer}>
-        <Container largePadding>
-          <div />
-          <Text bright>{description}</Text>
+        <Container smallPadding>
+          <DescriptionContainer>
+            <Text bright>{description}</Text>
+            {images
+              ? images.map((image) => (
+                  <ImageContainer key={image}>
+                    <Image fullWidth src={image} alt={title} />
+
+                    <GalleryButton
+                      onClick={(e) =>
+                        setGalleryState({ images, title, open: true })
+                      }
+                    >
+                      <VscZoomIn />
+                    </GalleryButton>
+                  </ImageContainer>
+                ))
+              : null}
+          </DescriptionContainer>
           {actions(true)}
         </Container>
       </Drawer>

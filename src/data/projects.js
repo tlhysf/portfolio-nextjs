@@ -1,12 +1,22 @@
 export const projects = [
   {
-    title: "MERN Memories",
+    title: "WiserMachines",
+    images: ["/images/wisermachines/0.png", "/images/wisermachines/1.png"],
     description:
-      "Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to finish. The App is called Memories and it is a simple social media app that allows users to post interesting events that happened in their lives.",
-    image: "/images/1.png",
-    tags: ["Mongo", "Express", "React", "Node"],
-    source: "https://google.com",
-    demo: "https://google.com",
+      "A full-stack web app built for digitizing factory shop floors. Its major features include, dashboards for real-time machine monitoring, alerts generation based on machine utilization, multi-level user access, data visualizations and insights, and report generation.",
+    tags: [
+      "React",
+      "Material UI",
+      "Redux",
+      "Node",
+      "Express",
+      "Mongo",
+      "Websockets",
+      "MQTT",
+      "JWT",
+    ],
+    source: "https://github.com/tlhysf/wisermachines-webapp",
+    demo: "https://wisermachines-demo-12e0a.web.app/",
   },
   {
     title: "E-Commerce",

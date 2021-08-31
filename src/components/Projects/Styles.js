@@ -38,9 +38,39 @@ export const Drawer = styled.div`
   }
 `;
 
-export const Image = styled.img`
+export const ImageContainer = styled.div`
+  position: relative;
+  max-height: min-content;
+`;
+
+export const GalleryButton = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  opacity: 0.7;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00000070;
+
+  font-size: 6rem;
+
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+`;
+
+export const Image = styled.img`
+  width: ${(props) => (props.fullWidth ? "100%" : "95%")};
+  margin: 0 auto;
+  margin-top: 10px;
+  opacity: 0.9;
   transition: 0.3s ease-in-out;
 `;
 
@@ -85,6 +115,25 @@ export const Container = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+`;
+
+export const DescriptionContainer = styled.div`
+  max-width: 300px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 10px;
+
+  overflow-y: auto;
+  ::-webkit-scrollbar {
+    width: 4px;
+    border-left: 4px solid ${(props) => props.theme.colors.text.secondary};
+  }
+  ::-webkit-scrollbar-thumb {
+    background: ${(props) => props.theme.colors.accent.primary};
   }
 `;
 
