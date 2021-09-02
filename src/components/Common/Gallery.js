@@ -43,6 +43,11 @@ const Image = styled.img`
   max-width: 80vw;
   max-height: 80vh;
   margin: auto;
+
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 `;
 
 const ButtonsContainer = styled.div`
@@ -93,30 +98,45 @@ const Button = styled.a`
 export default function Gallery({ galleryState, setGalleryState }) {
   const { open, title, images } = galleryState;
 
-  const [image, setImage] = useState(images[0]);
+  const [imageSrc, setImageSrc] = useState(images[0]);
 
   const next = (element, list = images) => {
     const index = list.indexOf(element);
-    setImage(index === list.length - 1 ? list[0] : list[index + 1]);
+    setImageSrc(index === list.length - 1 ? list[0] : list[index + 1]);
   };
 
   const previous = (element, list = images) => {
     const index = list.indexOf(element);
-    setImage(index === 0 ? list[list.length - 1] : list[index - 1]);
+    setImageSrc(index === 0 ? list[list.length - 1] : list[index - 1]);
+  };
+
+  const clearStateFirst = (callback) => {
+    setImageSrc(null);
+    setTimeout(() => {
+      callback();
+    }, 1);
   };
 
   useEffect(() => {
-    setImage(galleryState.images[0]);
+    setImageSrc(galleryState.images[0]);
   }, [galleryState]);
+
+  const renderCount = (element, list = images) => (
+    <small>
+      <strong>
+        {list.indexOf(element) + 1}&nbsp;/&nbsp;{list.length}
+      </strong>
+    </small>
+  );
 
   return (
     <Container open={open}>
       <Paper>
-        <Image src={image} alt={title} />
+        <Image src={imageSrc ? imageSrc : "spinner.gif"} alt={title} />
 
         <ButtonsContainer open={open}>
           <ButtonGroup>
-            <div />
+            {renderCount(imageSrc)}
             <Button
               onClick={(e) =>
                 setGalleryState((state) => ({ ...state, open: false }))
@@ -128,16 +148,18 @@ export default function Gallery({ galleryState, setGalleryState }) {
 
           <ButtonGroup>
             <Button>
-              <AiOutlineLeftCircle onClick={(e) => previous(image)} />
+              <AiOutlineLeftCircle
+                onClick={(e) => clearStateFirst(() => previous(imageSrc))}
+              />
             </Button>
 
-            <Button onClick={(e) => next(image)}>
+            <Button onClick={(e) => clearStateFirst(() => next(imageSrc))}>
               <AiOutlineRightCircle />
             </Button>
           </ButtonGroup>
 
           <ButtonGroup>
-            <Button href={image} target="_blank">
+            <Button href={imageSrc} target="_blank">
               <AiOutlineFullscreen />
             </Button>
             <div />

@@ -8,7 +8,7 @@ const getListOfPaths = (folderName, numberOfImages) => {
 
 export const projects = [
   {
-    images: getListOfPaths("wisermachines", 2),
+    folderName: "wisermachines",
     title: "WiserMachines",
     description: [
       "A full-stack web app built for digitizing factory shop floors. Its users can be factory personnel with different roles.",
@@ -30,7 +30,7 @@ export const projects = [
     demo: "https://wisermachines-demo-12e0a.web.app/",
   },
   {
-    images: getListOfPaths("sedenius", 12),
+    folderName: "sedenius",
     title: "Asset Management",
     description: [
       "A comprehensive asset management tool for inventory keeping, maintenance planning and scheduling, resource allocation, rent scheduling, and location monitoring, of assets such electronics, mechanical equipment, etc.",
@@ -42,17 +42,15 @@ export const projects = [
     tags: ["React", "Redux", "Leaflet", "RBC"],
   },
   {
-    images: getListOfPaths("portfolio", 0),
+    folderName: "portfolio",
     title: "Portfolio",
-    description:
-      "This is a code repository for the corresponding video tutorial. In this video, we will create a full Realtime Chat Application",
-    image: "/images/4.jpg",
-    tags: ["React", "ChatEngine", "Firebase"],
-    source: "https://google.com",
-    demo: "https://google.com",
+    description: [
+      "Second iteration of my personal website. Designed and developed with a conscious effort to avoid using any superfluous frameworks like Bootstrap.",
+      "I built this site from scratch. By scratch, I mean absolutely from scratch without any UI library/framework (except React though) and had so much fun along the way.",
+    ],
   },
   {
-    images: getListOfPaths("devlink", 4),
+    folderName: "devlink",
     title: "MERN Social Media App",
     description: [
       "This was a personal project. Its a full-stack app build in MERN, featuring basic functionalities of a social media platform.",
@@ -64,21 +62,11 @@ export const projects = [
   },
 
   {
+    folderName: "genes",
     title: "Genes and Machines",
-    description:
-      "This is a code repository for the corresponding YouTube video. In this tutorial, we're going to build and deploy a React Video Chat Application using WebRTC.",
-    image: "/images/3.jpg",
-    tags: ["React", "WebRTC"],
-    source: "https://google.com",
-    demo: "https://google.com",
   },
   {
+    folderName: "redux",
     title: "React-Redux Boilerplate",
-    description:
-      "This is a code repository for the corresponding video tutorial. In this video, we will create a full Realtime Chat Application",
-    image: "/images/4.jpg",
-    tags: ["React", "ChatEngine", "Firebase"],
-    source: "https://google.com",
-    demo: "https://google.com",
   },
 ];

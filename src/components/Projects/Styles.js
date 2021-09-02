@@ -64,9 +64,9 @@ export const ImageButton = styled.div`
   }
 `;
 
-export const ImageContainer = styled.div`
+export const ImageWrapper = styled.div`
   position: relative;
-  max-height: min-content;
+  width: 100%;
 
   &:hover {
     cursor: pointer;
@@ -78,8 +78,15 @@ export const ImageContainer = styled.div`
 `;
 
 export const Image = styled.img`
+  background: url(project.jpg);
+  background-repeat: no-repeat;
+
   width: ${(props) => (props.fullWidth ? "100%" : "95%")};
   margin: 0 auto;
+
+  height: 180px;
+  object-fit: cover;
+
   opacity: 0.9;
   transition: 0.3s ease-in-out;
 `;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Title, ExternalLink, Text, List } from "components/Common/Misc";
 import Tooltip from "components/Common/Tooltip";
@@ -14,17 +14,59 @@ import {
   Tag,
   DescriptionContainer,
   DescriptionButton,
-  ImageContainer,
+  ImageWrapper,
 } from "./Styles";
 
 import { VscGithubAlt, VscLinkExternal, VscZoomIn } from "react-icons/vsc";
 
+import { getImageRefs, getImageURL } from "data/images";
+
 const Project = ({ data, setGalleryState }) => {
-  const { title, description, images, tags, source, demo } = data;
+  const { title, description, folderName, tags, source, demo } = data;
 
   const [openDrawer, setOpenDrawer] = useState(false);
 
-  const actions = (drawer) => (
+  const [imageRefs, setimageRefs] = useState([]);
+  const [imageURLs, setimageURLs] = useState([]);
+  const [imageURLsSorted, setimageURLsSorted] = useState([]);
+
+  useEffect(() => {
+    if (folderName && imageRefs.length === 0)
+      getImageRefs(folderName).then((x) => {
+        setimageRefs(x);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (imageRefs)
+      imageRefs.forEach((ref) =>
+        getImageURL(ref).then((url) => {
+          if (imageURLs.indexOf(url) < 0) setimageURLs((x) => [...x, url]);
+        })
+      );
+  }, [imageRefs]);
+
+  useEffect(() => {
+    const getFileNameFromURL = (url) => {
+      const split1 = String(url).split(".png");
+      const split2 = split1[0].split("%2F");
+      return split2[split2.length - 1];
+    };
+
+    if (imageURLs.length === imageRefs.length) {
+      const sorted = imageURLs.sort((A, B) => {
+        const a = parseInt(getFileNameFromURL(A));
+        const b = parseInt(getFileNameFromURL(B));
+        if (a < b) return -1;
+        if (a > b) return 1;
+        return 0;
+      });
+
+      setimageURLsSorted(sorted);
+    }
+  }, [imageURLs]);
+
+  const renderActions = (drawer) => (
     <CardMarkup row>
       <List row smallGap>
         <ExternalLink href={demo} target="_blank" altHover>
@@ -46,32 +88,43 @@ const Project = ({ data, setGalleryState }) => {
     </CardMarkup>
   );
 
+  const renderImage = imageURLsSorted[0] ? (
+    <ImageWrapper
+      onClick={(e) =>
+        setGalleryState({ images: imageURLsSorted, title, open: true })
+      }
+    >
+      <Image fullWidth src={imageURLsSorted[0]} alt={title} />
+
+      <ImageButton>
+        <VscZoomIn />
+      </ImageButton>
+    </ImageWrapper>
+  ) : (
+    <ImageWrapper>
+      <Image fullWidth src={"project.jpg"} alt={title} />
+    </ImageWrapper>
+  );
+
   return (
     <Card>
       <CardMarkup>
-        {images ? (
-          <ImageContainer
-            onClick={(e) => setGalleryState({ images, title, open: true })}
-          >
-            <Image fullWidth src={images[0]} alt={title} />
-            <ImageButton>
-              <VscZoomIn />
-            </ImageButton>
-          </ImageContainer>
-        ) : null}
+        {renderImage}
 
         <CardMarkup smallPadding>
           <List smallGap>
             <Divider />
             <Title>{title}</Title>
             <TagList>
-              {tags.map((tag, index) => (
-                <Tag key={tag + String(index)}>{tag}</Tag>
-              ))}
+              {Array.isArray(tags)
+                ? tags.map((tag, index) => (
+                    <Tag key={tag + String(index)}>{tag}</Tag>
+                  ))
+                : null}
             </TagList>
           </List>
           <br />
-          {actions()}
+          {renderActions()}
         </CardMarkup>
       </CardMarkup>
       <Drawer open={openDrawer}>
@@ -85,7 +138,7 @@ const Project = ({ data, setGalleryState }) => {
                 ))
               : null}
           </DescriptionContainer>
-          {actions(true)}
+          {renderActions(true)}
         </CardMarkup>
       </Drawer>
     </Card>
