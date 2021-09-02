@@ -6,15 +6,15 @@ import Tooltip from "components/Common/Tooltip";
 import {
   Drawer,
   Card,
-  TagList,
-  Tag,
+  CardMarkup,
   Divider,
   Image,
-  CardMarkup,
-  DescriptionContainer,
-  ImageContainer,
   ImageButton,
+  TagList,
+  Tag,
+  DescriptionContainer,
   DescriptionButton,
+  ImageContainer,
 } from "./Styles";
 
 import { VscGithubAlt, VscLinkExternal, VscZoomIn } from "react-icons/vsc";
@@ -28,12 +28,14 @@ const Project = ({ data, setGalleryState }) => {
     <CardMarkup row>
       <List row smallGap>
         <ExternalLink href={demo} target="_blank" altHover>
-          <Tooltip content="Demo">
+          <Tooltip content={demo ? "Demo" : "Demo not available."}>
             <VscLinkExternal />
           </Tooltip>
         </ExternalLink>
         <ExternalLink href={source} target="_blank" altHover>
-          <Tooltip content="Code">
+          <Tooltip
+            content={source ? "Code" : "Note allowed to share the code."}
+          >
             <VscGithubAlt />
           </Tooltip>
         </ExternalLink>
@@ -48,12 +50,11 @@ const Project = ({ data, setGalleryState }) => {
     <Card>
       <CardMarkup>
         {images ? (
-          <ImageContainer>
+          <ImageContainer
+            onClick={(e) => setGalleryState({ images, title, open: true })}
+          >
             <Image fullWidth src={images[0]} alt={title} />
-
-            <ImageButton
-              onClick={(e) => setGalleryState({ images, title, open: true })}
-            >
+            <ImageButton>
               <VscZoomIn />
             </ImageButton>
           </ImageContainer>
@@ -61,7 +62,7 @@ const Project = ({ data, setGalleryState }) => {
 
         <CardMarkup smallPadding>
           <List smallGap>
-            <Divider length={title.length} />
+            <Divider />
             <Title>{title}</Title>
             <TagList>
               {tags.map((tag, index) => (
@@ -76,7 +77,13 @@ const Project = ({ data, setGalleryState }) => {
       <Drawer open={openDrawer}>
         <CardMarkup smallPadding>
           <DescriptionContainer>
-            <Text bright>{description}</Text>
+            {Array.isArray(description)
+              ? description.map((x, i) => (
+                  <Text bright key={i}>
+                    {x}
+                  </Text>
+                ))
+              : null}
           </DescriptionContainer>
           {actions(true)}
         </CardMarkup>

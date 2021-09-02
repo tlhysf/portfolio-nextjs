@@ -10,34 +10,30 @@ import {
 const Container = styled.div`
   position: fixed;
   z-index: ${(props) => props.theme.zIndexes.gallery};
-  top: 0;
-  left: 50%;
   transition: 0.6s ease-in-out;
-  width: 0%;
+  overflow: hidden;
+
+  top: 0%;
+  left: 0%;
+
   max-height: 0%;
   min-height: 0%;
-  overflow: hidden;
-  opacity: 0;
+  width: 0%;
 
   @media ${(props) => !props.open} {
-    width: 100%;
     max-height: 100%;
     min-height: 100%;
-    left: 0%;
-    opacity: 1;
+    width: 100%;
   }
 `;
 
 const Paper = styled.div`
   position: relative;
-  border-radius: 5px;
   background-color: ${(props) => props.theme.colors.bg.tertiary};
   padding: 1rem;
 
-  width: 95%;
-  height: 95vh;
-  margin: 0 auto;
-  margin-top: 1rem;
+  width: 100%;
+  height: 100vh;
 
   display: flex;
   justify-content: center;
@@ -73,26 +69,24 @@ const ButtonGroup = styled.div`
   padding: 2rem;
 `;
 
+const buttonSize = 4;
 const Button = styled.a`
-  font-size: 30px;
-  width: 40px;
-  height: 40px;
+  width: ${buttonSize}rem;
+  height: ${buttonSize}rem;
+  font-size: ${buttonSize - 1}rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => props.theme.colors.bg.tertiary + "90"};
-  border-radius: 100%;
-  color: ${(props) => props.theme.colors.text.primary};
+  background-color: #00000070;
+  color: #fff;
+  border-radius: 10px;
   transition: 0.2s ease-in-out;
-  transform: scale(1);
-
   &:hover {
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
-
   &:active {
-    transform: scale(0.9);
+    transform: scale(1);
   }
 `;
 

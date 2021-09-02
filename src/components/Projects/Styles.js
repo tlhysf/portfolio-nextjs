@@ -38,34 +38,42 @@ export const Drawer = styled.div`
   }
 `;
 
-export const ImageContainer = styled.div`
-  position: relative;
-  max-height: min-content;
-`;
-
+const imageButtonSize = 6;
 export const ImageButton = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
+  top: 50%;
+  left: 50%;
+  width: ${imageButtonSize}rem;
+  height: ${imageButtonSize}rem;
+  margin-top: -${imageButtonSize / 2}rem;
+  margin-left: -${imageButtonSize / 2}rem;
+  font-size: ${imageButtonSize - 1}rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #00000070;
-
-  font-size: 4rem;
-
+  background-color: #00000070;
+  color: #fff;
+  border-radius: 10px;
   opacity: 0;
   transition: 0.2s ease-in-out;
-
   &:hover {
-    opacity: 1;
-    cursor: pointer;
+    transform: scale(1.2);
   }
   &:active {
-    font-size: 3rem;
+    transform: scale(1);
+  }
+`;
+
+export const ImageContainer = styled.div`
+  position: relative;
+  max-height: min-content;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover ${ImageButton} {
+    opacity: 1;
   }
 `;
 
@@ -121,8 +129,8 @@ export const CardMarkup = styled.div`
 `;
 
 export const Divider = styled.hr`
-  width: ${({ length }) => length * 14}px;
-  height: 0.2rem;
+  width: 70%;
+  height: 2px;
   border: 0;
   background: ${(props) => props.theme.colors.gradients.primary};
 `;
