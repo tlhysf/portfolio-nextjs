@@ -1,11 +1,3 @@
-const getListOfPaths = (folderName, numberOfImages) => {
-  let list = [];
-  for (let i = 0; i < numberOfImages; i++) {
-    list.push("/images/" + folderName + "/" + String(i) + ".png");
-  }
-  return list;
-};
-
 export const projects = [
   {
     folderName: "wisermachines",
