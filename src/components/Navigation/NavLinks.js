@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { NavLinksWrapper, NavLink } from "./Styles";
 
-import sections from "config.js/sections";
+import sections from "config";
 
 const NavLinks = (props) => {
   return (

@@ -3,6 +3,8 @@ import React from "react";
 import { AiFillGithub, AiFillMail, AiFillLinkedin } from "react-icons/ai";
 import { ButtonGroup, IconButton } from "components/Common/Buttons";
 
+import { sections } from "config";
+
 const socials = [
   {
     name: "github",
@@ -18,7 +20,7 @@ const socials = [
   },
   {
     name: "mail",
-    link: "#contact",
+    link: "#" + sections[3],
     icon: <AiFillMail />,
     external: false,
   },

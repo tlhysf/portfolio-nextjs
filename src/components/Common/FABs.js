@@ -11,14 +11,17 @@ const Container = styled.div`
   top: 0;
   padding: 2rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 `;
 
 const FABs = (props) => {
   return (
     <Container {...props}>
+      <div />
       <SocialLinks column hideOnSmall />
+      <div />
     </Container>
   );
 };

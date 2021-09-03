@@ -2,7 +2,7 @@ import React from "react";
 
 import { Section, SectionText, SectionTitle } from "components/Common/Section";
 import { Button } from "components/Common/Buttons";
-import BackgroundAnimation from "components/Common/BackgroundAnimation";
+import BackgroundAnimation from "./BackgroundAnimation";
 
 import { BannerContent, BannerBgContainer } from "./Styles";
 

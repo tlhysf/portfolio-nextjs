@@ -10,7 +10,7 @@ export const TooltipPaper = styled.div`
   position: absolute;
   top: -40px;
 
-  background-color: #00000090;
+  background-color: #00000099;
   color: #ffffff99;
 
   border-radius: 5px;
