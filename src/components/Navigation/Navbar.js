@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ScrollContext } from "Context/ScrollContext";
 
 import { IoIosMenu } from "react-icons/io";
 
@@ -8,9 +9,11 @@ import LogoButton from "./LogoButton";
 import { NavbarWrapper, NavbarContainer, MenuButton } from "./Styles";
 
 const Navbar = (props) => {
+  const scroll = useContext(ScrollContext);
+
   return (
-    <NavbarWrapper {...props}>
-      <NavbarContainer {...props}>
+    <NavbarWrapper {...props} scroll={scroll}>
+      <NavbarContainer {...props} scroll={scroll}>
         <LogoButton />
         <NavLinks />
         <CTA hideOnSmall />

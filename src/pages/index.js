@@ -7,6 +7,8 @@ import Timeline from "components/Timeline/Timeline";
 import Gallery from "components/Common/Gallery";
 import { Layout } from "../layout/Layout";
 
+import ScrollContextProvider from "Context/ScrollContext";
+
 const Home = () => {
   const [galleryState, setGalleryState] = useState({
     title: "",
@@ -14,28 +16,16 @@ const Home = () => {
     open: false,
   });
 
-  // state to keep track of how many px scrolled
-  const [scroll, setScroll] = useState({ y: 0, yUpward: true });
-
-  // set up listener on window to update scroll state on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      setScroll((state) => ({
-        y: window.scrollY,
-        yUpward: state.y > window.scrollY,
-      }));
-    };
-    window.addEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <Layout scroll={scroll}>
-      <Gallery {...{ galleryState, setGalleryState }} />
-      <Banner />
-      <Skills />
-      <Timeline />
-      <Projects {...{ setGalleryState }} />
-    </Layout>
+    <ScrollContextProvider>
+      <Layout>
+        <Gallery {...{ galleryState, setGalleryState }} />
+        <Banner />
+        <Skills />
+        <Timeline />
+        <Projects {...{ setGalleryState }} />
+      </Layout>
+    </ScrollContextProvider>
   );
 };
 

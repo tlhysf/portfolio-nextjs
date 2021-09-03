@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 
 import SocialLinks from "components/Common/SocialLinks";
+
+import { ScrollContext } from "Context/ScrollContext";
 
 const Container = styled.div`
   position: fixed;
@@ -14,11 +16,15 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  transition: ease 0.3s;
+  transform: translateY(${(props) => (props.scroll.y > 350 ? 0 : 100)}%);
 `;
 
-const FABs = (props) => {
+const FABs = () => {
+  const scroll = useContext(ScrollContext);
+
   return (
-    <Container {...props}>
+    <Container scroll={scroll}>
       <div />
       <SocialLinks column hideOnSmall />
       <div />

@@ -8,7 +8,7 @@ import FABs from "components/Common/FABs";
 
 import { Container } from "layout/LayoutStyles";
 
-export const Layout = ({ children, scroll }) => {
+export const Layout = ({ children }) => {
   const [openSidebar, setOpenSidebar] = useState(false);
   const [hash, setHash] = useState(null);
 
@@ -37,7 +37,7 @@ export const Layout = ({ children, scroll }) => {
     <Container>
       <Sidebar {...{ toggleSidebar, openSidebar }} />
       <FABs />
-      <Navbar {...{ toggleSidebar, openSidebar, scroll }} />
+      <Navbar {...{ toggleSidebar, openSidebar }} />
       <main>{children}</main>
       <Footer />
     </Container>
