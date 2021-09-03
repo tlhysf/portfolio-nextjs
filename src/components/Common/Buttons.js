@@ -14,7 +14,7 @@ export const ButtonGroup = styled.div`
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled.a`
   border: none;
   display: flex;
   justify-content: center;
