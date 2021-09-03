@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 
 import SocialLinks from "components/Common/SocialLinks";
+import { IconButton } from "components/Common/Buttons";
+import { AiOutlineArrowUp } from "react-icons/ai";
 
 import { ScrollContext } from "Context/ScrollContext";
 
@@ -27,7 +29,9 @@ const FABs = () => {
     <Container scroll={scroll}>
       <div />
       <SocialLinks column hideOnSmall />
-      <div />
+      <IconButton href="#Home">
+        <AiOutlineArrowUp />
+      </IconButton>
     </Container>
   );
 };

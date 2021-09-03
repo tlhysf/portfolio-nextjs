@@ -104,18 +104,12 @@ export const Logo = styled.a`
   color: ${(props) => props.theme.colors.text.primary};
   font-size: 3.5rem;
   transition: 0.3s ease;
-
   @media ${(props) => props.theme.breakpoints.sm} {
     font-size: 3rem;
   }
-
   &:hover {
-    color: ${(props) => props.theme.colors.accent.primary};
     transform: scale(1.2);
     cursor: pointer;
-  }
-  &:active {
-    transform: scale(1);
   }
 `;
 
@@ -149,17 +143,20 @@ export const NavLink = styled.a`
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  line-height: 32px;
+  line-height: 28px;
   color: ${(props) => props.theme.colors.text.primary};
   transition: 0.3s ease;
 
+  border-bottom: solid 2px;
+  border-color: #00000000;
+
   &:hover {
-    color: ${(props) => props.theme.colors.accent.primary};
-    transform: scale(1.2);
+    border-color: ${(props) => props.theme.colors.accent.primary};
     cursor: pointer;
   }
+
   &:active {
-    transform: scale(1);
+    border-color: ${(props) => props.theme.colors.text.primary};
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
@@ -177,19 +174,19 @@ export const MenuButton = styled.div`
     align-items: center;
     justify-content: center;
     color: ${(props) => props.theme.colors.text.primary};
-    font-size: 1.8rem;
-    transition: 0.2s ease;
+    font-size: 18px;
+    transition: 0.3s ease;
     border-radius: 10%;
     border-style: solid;
     border-width: 0.2rem;
     &:hover {
-      color: ${(props) => props.theme.colors.accent.primary};
-      border-style: none;
-      transform: scale(1.2);
       cursor: pointer;
+      background-color: ${(props) => props.theme.colors.text.primary};
+      color: ${(props) => props.theme.colors.bg.primary};
+      font-size: 22px;
     }
     &:active {
-      transform: scale(1);
+      background-color: ${(props) => props.theme.colors.text.secondary};
     }
   }
 `;

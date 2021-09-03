@@ -38,7 +38,7 @@ export const Drawer = styled.div`
   }
 `;
 
-const imageButtonSize = 6;
+const imageButtonSize = 4;
 export const ImageButton = styled.div`
   position: absolute;
   top: 50%;

@@ -8,7 +8,7 @@ import { BannerContent, BannerBgContainer } from "./Styles";
 
 const Banner = () => (
   <div>
-    <Section nopadding fullHeight>
+    <Section nopadding fullHeight id="Home">
       <BannerBgContainer>
         <BackgroundAnimation />
       </BannerBgContainer>
@@ -22,7 +22,7 @@ const Banner = () => (
           I'm a Full Stack Web Developer.
           <br />I stare at a glowing rectangle all day.
         </SectionText>
-        <Button>Get In Touch</Button>
+        <Button href="#Contact">Get In Touch</Button>
       </BannerContent>
     </Section>
   </div>
