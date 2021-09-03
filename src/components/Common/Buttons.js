@@ -64,8 +64,7 @@ export const IconButton = styled.a`
   border-style: solid;
   border-width: 0.2rem;
   &:hover {
-    color: ${(props) => props.color};
-    background-color: ${(props) => props.theme.colors.text.primary};
+    background-color: ${(props) => props.color};
     border-style: none;
     transform: scale(1.2);
     cursor: pointer;
