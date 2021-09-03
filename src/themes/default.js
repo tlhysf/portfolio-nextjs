@@ -16,61 +16,19 @@ export default {
       secondary: "#8892b0",
     },
 
-    gradients: {
-      primary: "linear-gradient(270deg, #f56038 0%, #945DD6 100%)",
-      secondary: "linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)",
-      text: "linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%)",
-    },
-
     bg: {
       primary: "#020c1b",
       secondary: "#0a192f",
       tertiary: "#010813",
     },
 
-    navLink: {
-      primary: {
-        main: {
-          color: "#ffffff90",
-        },
-        active: {
-          color: "#ffffff70",
-        },
-        hover: {
-          color: "#ffffff",
-        },
-      },
-    },
-
-    iconButton: {
-      primary: {
-        main: {
-          color: "#ffffff",
-          bg: "#ffffff00",
-        },
-        hover: {
-          color: "#22252e",
-          bg: "#ffffff",
-        },
-      },
-      secondary: {
-        main: {
-          color: "#ffffff",
-          bg: "#ffffff00",
-        },
-        hover: {
-          color: "#ffffff",
-          bg: "#00000050",
-        },
-        active: {
-          color: "#ffffff",
-          bg: "#00000070",
-        },
-      },
+    gradients: {
+      primary: "linear-gradient(270deg, #f56038 0%, #945DD6 100%)",
+      secondary: "linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)",
+      text: "linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%)",
     },
   },
 
-  // Breakpoints for responsive design
   breakpoints: {
     xs: "screen and (max-width: 576px)",
     sm: "screen and (max-width: 640px)",

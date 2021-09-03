@@ -12,13 +12,15 @@ import Step from "components/Timeline/Step";
 
 import { timeline } from "data/timeline";
 
+import sections from "config.js/sections";
+
 const Timeline = () => {
   const [expanded, setExpanded] = useState(0);
 
   const widthFactor = Math.max(...timeline.map((x) => x.period.length));
 
   return (
-    <Section fullHeight nopadding id="Timeline">
+    <Section fullHeight nopadding id={sections[1]}>
       <SectionDivider />
       <SectionTitle>Timeline</SectionTitle>
       <List noGap>

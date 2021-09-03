@@ -98,13 +98,13 @@ export const Card = styled.div`
 
   transition: 0.3s ease-in-out;
 
-  width: 99%;
-  height: 99%;
+  width: 100%;
+  height: 100%;
 
-  &:hover {
+  /* &:hover {
     width: 100%;
     height: 100%;
-  }
+  } */
 
   &:hover ${Image} {
     opacity: 1;

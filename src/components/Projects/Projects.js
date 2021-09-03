@@ -11,9 +11,11 @@ import {
 
 import { projects } from "data/projects";
 
+import sections from "config.js/sections";
+
 const Projects = ({ setGalleryState }) => {
   return (
-    <Section fullHeight nopadding id="Projects">
+    <Section fullHeight nopadding id={sections[2]}>
       <SectionDivider />
       <SectionTitle>Projects</SectionTitle>
       <Grid>
