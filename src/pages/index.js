@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import Banner from "../components/Banner/Banner";
 import Projects from "../components/Projects/Projects";
@@ -7,7 +7,7 @@ import Timeline from "components/Timeline/Timeline";
 import Gallery from "components/Common/Gallery";
 import { Layout } from "../layout/Layout";
 
-import ScrollContextProvider from "Context/ScrollContext";
+import ContextProvider from "Context";
 
 const Home = () => {
   const [galleryState, setGalleryState] = useState({
@@ -17,7 +17,7 @@ const Home = () => {
   });
 
   return (
-    <ScrollContextProvider>
+    <ContextProvider>
       <Layout>
         <Gallery {...{ galleryState, setGalleryState }} />
         <Banner />
@@ -25,7 +25,7 @@ const Home = () => {
         <Timeline />
         <Projects {...{ setGalleryState }} />
       </Layout>
-    </ScrollContextProvider>
+    </ContextProvider>
   );
 };
 

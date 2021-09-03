@@ -8,7 +8,9 @@ export const TooltipPaper = styled.div`
   width: max-content;
 
   position: absolute;
-  top: -40px;
+
+  top: ${(props) => (props.bottom ? "calc(100% + 20px)" : "-40px")};
+  left: 0;
 
   background-color: #00000099;
   color: #ffffff99;
@@ -18,7 +20,7 @@ export const TooltipPaper = styled.div`
   font-size: 14px;
 `;
 
-const Tooltip = ({ children, content }) => {
+const Tooltip = ({ children, content, bottom }) => {
   const [hover, sethover] = useState(false);
 
   return (
@@ -27,7 +29,9 @@ const Tooltip = ({ children, content }) => {
       onMouseEnter={(e) => sethover(true)}
       onMouseLeave={(e) => sethover(false)}
     >
-      <TooltipPaper hover={hover}>{content}</TooltipPaper>
+      <TooltipPaper hover={hover} bottom={bottom}>
+        {content}
+      </TooltipPaper>
       {children}
     </div>
   );

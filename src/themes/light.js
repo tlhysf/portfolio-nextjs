@@ -1,31 +1,41 @@
 export default {
+  id: "light",
+
   fonts: {
     title: "Space Grotesk, sans-serif",
     main: "Space Grotesk, sans-serif",
   },
   colors: {
     accent: {
-      primary: "#f56038",
-      secondary: "#945DD6",
-      tertiary: "#13ADC7",
-      hover: "#112240",
+      primary: "#945DD6",
+      secondary: "#FF6B6B",
+      tertiary: "#7F557D",
+      hover: "#AFE3C0",
     },
 
     text: {
-      primary: "#ccd6f6",
-      secondary: "#8892b0",
+      primary: "#692DB4",
+      secondary: "#41292C",
     },
 
     bg: {
-      primary: "#020c1b",
-      secondary: "#0a192f",
-      tertiary: "#010813",
+      primary: "#FFFddd",
+      secondary: "#9ABCA7",
+      tertiary: "",
     },
 
     gradients: {
       primary: "linear-gradient(270deg, #f56038 0%, #945DD6 100%)",
       secondary: "linear-gradient(270deg, #13ADC7 0%, #945DD6 100%)",
-      text: "linear-gradient(121.57deg, #ffffff 18.77%, rgba(255, 255, 255, 0.66) 60.15%)",
+      text: "linear-gradient(121.57deg, #485564 18.77%, rgba(0, 0, 0, 0.66) 60.15%)",
+    },
+
+    blog: {
+      bgLighter: "#a564c2",
+      bg: "#8e45ae",
+      bgDarker: "#612f77",
+      title: "#fff",
+      text: "#8892b0",
     },
   },
 

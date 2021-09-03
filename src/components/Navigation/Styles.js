@@ -71,16 +71,18 @@ export const NavbarContainer = styled(NavbarTemplate)`
   margin: 0 auto;
   transition: 0.3s ease;
 
+  display: flex;
+  align-items: center;
+
   @media ${(props) => props.scroll.y <= 0} {
-    width: 90%;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    margin: 0 auto;
-    margin-top: 1rem;
+    /* margin: 0 auto; */
+    /* margin-top: 1rem; */
+    /* width: 90%;
+    border-radius: 0.5rem; */
 
     background-color: ${(props) => props.theme.colors.bg.secondary + "90"};
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 
     box-shadow: ${boxShadow};
     -moz-box-shadow: ${boxShadow};

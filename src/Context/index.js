@@ -1,8 +1,8 @@
 import React, { createContext, useState, useEffect } from "react";
 
-export const ScrollContext = createContext();
+export const Context = createContext();
 
-const ScrollContextProvider = (props) => {
+const ContextProvider = (props) => {
   // state to keep track of how many px scrolled
   const [scroll, setScroll] = useState({ y: 0, yUpward: true });
 
@@ -18,10 +18,8 @@ const ScrollContextProvider = (props) => {
   }, []);
 
   return (
-    <ScrollContext.Provider value={scroll}>
-      {props.children}
-    </ScrollContext.Provider>
+    <Context.Provider value={{ scroll }}>{props.children}</Context.Provider>
   );
 };
 
-export default ScrollContextProvider;
+export default ContextProvider;

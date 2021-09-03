@@ -26,7 +26,7 @@ export const Drawer = styled.div`
   text-align: justify;
   line-height: 20px;
 
-  background-color: ${(props) => props.theme.colors.bg.tertiary + "99"};
+  background-color: ${(props) => props.theme.colors.blog.bg + "99"};
   -webkit-backdrop-filter: blur(50px);
   backdrop-filter: blur(50px);
 
@@ -94,7 +94,7 @@ export const Image = styled.img`
 export const Card = styled.div`
   position: relative;
   overflow: hidden;
-  background-color: ${(props) => props.theme.colors.bg.secondary};
+  background-color: ${(props) => props.theme.colors.blog.bg};
 
   transition: 0.3s ease-in-out;
 
@@ -151,8 +151,8 @@ export const TagList = styled.div`
 
 export const Tag = styled.div`
   max-width: fit-content;
-  color: ${(props) => props.theme.colors.text.primary};
-  background-color: ${(props) => props.theme.colors.accent.hover};
+  color: ${(props) => props.theme.colors.blog.title};
+  background-color: ${(props) => props.theme.colors.blog.bgLighter};
 
   font-size: 14px;
   padding: 5px 10px;
@@ -171,16 +171,16 @@ export const DescriptionContainer = styled.div`
   overflow-y: auto;
   ::-webkit-scrollbar {
     width: 4px;
-    border-left: 4px solid ${(props) => props.theme.colors.text.secondary};
+    border-left: 4px solid ${(props) => props.theme.colors.blog.bg};
   }
   ::-webkit-scrollbar-thumb {
-    background: ${(props) => props.theme.colors.accent.primary};
+    background: ${(props) => props.theme.colors.blog.text};
   }
 `;
 
 export const DescriptionButton = styled.div`
-  background-color: ${(props) => props.theme.colors.bg.tertiary};
-  color: ${(props) => props.theme.colors.text.secondary};
+  background-color: ${(props) => props.theme.colors.blog.bgDarker};
+  color: ${(props) => props.theme.colors.blog.text};
 
   font-size: 14px;
   padding: 5px 10px;
@@ -188,7 +188,7 @@ export const DescriptionButton = styled.div`
   transition: 0.3s ease-in-out;
 
   &:hover {
-    color: ${(props) => props.theme.colors.text.primary};
+    color: ${(props) => props.theme.colors.accent.primary};
     cursor: pointer;
   }
 `;

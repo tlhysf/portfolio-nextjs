@@ -5,7 +5,7 @@ import SocialLinks from "components/Common/SocialLinks";
 import { IconButton } from "components/Common/Buttons";
 import { AiOutlineArrowUp } from "react-icons/ai";
 
-import { ScrollContext } from "Context/ScrollContext";
+import { Context } from "Context";
 
 const Container = styled.div`
   position: fixed;
@@ -18,12 +18,12 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  transition: ease 0.3s;
+  transition: ease 0.6s;
   transform: translateY(${(props) => (props.scroll.y > 350 ? 0 : 100)}%);
 `;
 
 const FABs = () => {
-  const scroll = useContext(ScrollContext);
+  const { scroll } = useContext(Context);
 
   return (
     <Container scroll={scroll}>

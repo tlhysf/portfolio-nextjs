@@ -132,7 +132,7 @@ export default function Gallery({ galleryState, setGalleryState }) {
   return (
     <Container open={open}>
       <Paper>
-        <Image src={imageSrc ? imageSrc : "spinner.gif"} alt={title} />
+        <Image src={imageSrc} alt={title} />
 
         <ButtonsContainer open={open}>
           <ButtonGroup>
