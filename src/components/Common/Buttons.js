@@ -24,7 +24,8 @@ export const Button = styled.a`
   border-radius: 3px;
   border-width: 1px;
   transition: 0.3s ease;
-  width: 12rem;
+  width: ${(props) => (props.autoWidth ? "fit-content" : "12rem")};
+  padding: 0 1.5rem;
   height: 4rem;
   font-size: 1.5rem;
   font-weight: 300;

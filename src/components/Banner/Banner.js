@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Section } from "components/Common/Section";
-// import { Button } from "components/Common/Buttons";
+import { Button } from "components/Common/Buttons";
 import SocialLinks from "components/Common/SocialLinks";
 
 import {
@@ -27,7 +27,10 @@ const Banner = () => (
           <Text>Islamabad, Pakistan</Text>
           <br />
           <SocialLinks />
-          {/* <Button href="#Contact">Get In Touch</Button> */}
+          <br />
+          <Button autoWidth href="#Contact">
+            Get In Touch
+          </Button>
         </TextContainer>
         <GraphicContainer>
           <ParticlesAnimation />

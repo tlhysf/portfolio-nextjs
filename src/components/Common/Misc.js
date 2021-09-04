@@ -55,6 +55,7 @@ export const Text = styled.div`
 
 export const List = styled.div`
   display: flex;
+  margin: ${(props) => (props.center ? "0 auto" : 0)};
   flex-direction: ${(props) => (props.row ? "row" : "column")};
   row-gap: ${(props) => (props.noGap ? 0 : props.smallGap ? "1rem" : "2rem")};
   column-gap: ${(props) =>
