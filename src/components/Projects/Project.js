@@ -70,14 +70,12 @@ const Project = ({ data, setGalleryState }) => {
     <CardMarkup row>
       <List row smallGap>
         <ExternalLink href={demo} target="_blank" altHover>
-          <Tooltip content={demo ? "Demo" : "Demo not available."}>
+          <Tooltip content={demo ? "Demo" : "Not available."}>
             <VscLinkExternal />
           </Tooltip>
         </ExternalLink>
         <ExternalLink href={source} target="_blank" altHover>
-          <Tooltip
-            content={source ? "Code" : "Note allowed to share the code."}
-          >
+          <Tooltip content={source ? "Code" : "Not available."}>
             <VscGithubAlt />
           </Tooltip>
         </ExternalLink>

@@ -8,6 +8,7 @@ export const projects = [
       "Users can set triggers and thresholds on machine or environment data for alert generation, schedule work shifts, keep track of production schedules, and generate reports.",
     ],
     tags: [
+      "Full-stack",
       "React",
       "Material UI",
       "Redux",
@@ -31,15 +32,17 @@ export const projects = [
 
       "Users can have an overview of schedules, locations and status of their assets.They can create and modify assets, change ownerships, set reminders for events, and create templates for assets, events and tasks.",
     ],
-    tags: ["React", "Redux", "Leaflet", "RBC"],
+    tags: ["Frontend", "React", "Redux", "Leaflet", "RBC"],
   },
   {
     folderName: "portfolio",
-    title: "Portfolio",
+    title: "Portfolio Website",
     description: [
-      "Second iteration of my personal website. Designed and developed with a conscious effort to avoid using any superfluous frameworks like Bootstrap.",
-      "I built this site from scratch. By scratch, I mean absolutely from scratch without any UI library/framework (except React though) and had so much fun along the way.",
+      "My personal portfolio website. Designed and developed with a conscious effort to avoid using any libraries/frameworks besides nextJS and styled-components, hence all the components, their styling and transitions/animations are implemented from scratch.",
     ],
+    tags: ["NextJS", "Styled Components"],
+    source: "https://github.com/tlhysf/portfolio-nextjs",
+    demo: "/",
   },
   {
     folderName: "devlink",
@@ -48,17 +51,36 @@ export const projects = [
       "This was a personal project. Its a full-stack app build in MERN, featuring basic functionalities of a social media platform.",
       "Users can create profiles, add experiences and education fields. They can create posts and can view public profiles and posts made by others, and can like/unlike and comment on posts.",
     ],
-    tags: ["React", "Node", "Express", "Mongo", "Redux", "Bootstrap", "JWT"],
+    tags: [
+      "Full-stack",
+      "React",
+      "Node",
+      "Express",
+      "Mongo",
+      "Redux",
+      "Bootstrap",
+      "JWT",
+      "Heroku",
+    ],
     source: "https://github.com/tlhysf/DevLink",
     demo: "https://devlink-merndemo.herokuapp.com/",
   },
-
   {
     folderName: "genes",
     title: "Genes and Machines",
+    description: [
+      "Website for Genes and Machines, a science communication startup.",
+    ],
+    tags: ["Frontend", "React"],
+    demo: "https://genes-and-machines.web.app/",
   },
   {
     folderName: "redux",
     title: "React-Redux Boilerplate",
+    tags: ["Frontend", "React", "Redux"],
+    description: [
+      "React-Redux Boilerplate code setup with community best practices.",
+    ],
+    source: "https://github.com/tlhysf/redux-react-boilerplate",
   },
 ];
