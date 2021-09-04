@@ -19,16 +19,24 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   transition: ease 0.6s;
-  transform: translateY(${(props) => (props.scroll.y > 350 ? 0 : 100)}%);
+  transform: translateY(${(props) => (props.hide ? 0 : 100)}%);
 `;
 
 const FABs = () => {
   const { scroll } = useContext(Context);
 
+  // scroll position as entering a section
+  // works only on desktop
+  // atm needed only for desktop as well
+  const section = {
+    second: 350,
+    last: 4200,
+  };
+
   return (
-    <Container scroll={scroll}>
+    <Container hide={scroll.y > section.second}>
       <div />
-      <SocialLinks column hideOnSmall />
+      <SocialLinks column hideOnSmall hide={scroll.y > section.last} />
       <IconButton href="#Home">
         <AiOutlineArrowUp />
       </IconButton>

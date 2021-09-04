@@ -13,6 +13,10 @@ export const ButtonGroup = styled.div`
       display: none;
     }
   }
+
+  @media ${({ hide }) => !hide} {
+    display: none;
+  }
 `;
 
 export const Button = styled.a`
