@@ -18,7 +18,7 @@ const Timeline = () => {
   const widthFactor = Math.max(...timeline.map((x) => x.period.length));
 
   return (
-    <Section fullHeight nopadding id="Timeline">
+    <Section fullHeight id="Timeline">
       <SectionDivider />
       <SectionTitle>Timeline</SectionTitle>
       <List noGap>

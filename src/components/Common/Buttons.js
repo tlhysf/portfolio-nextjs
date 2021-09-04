@@ -50,8 +50,8 @@ export const Button = styled.a`
 `;
 
 export const IconButton = styled.a`
-  width: 3rem;
-  height: 3rem;
+  width: 3.3rem;
+  height: 3.3rem;
   display: flex;
   align-items: center;
   justify-content: center;

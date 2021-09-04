@@ -13,7 +13,7 @@ import { projects } from "data/projects";
 
 const Projects = ({ setGalleryState }) => {
   return (
-    <Section fullHeight nopadding id="Projects">
+    <Section fullHeight id="Projects">
       <SectionDivider />
       <SectionTitle>Projects</SectionTitle>
       <Grid>

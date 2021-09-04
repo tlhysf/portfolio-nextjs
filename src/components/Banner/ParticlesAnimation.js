@@ -1,6 +1,6 @@
 import React from "react";
 
-const BackgroundAnimation = () => (
+const ParticlesAnimation = () => (
   <div>
     <svg
       className="BgAnimation__svg"
@@ -362,4 +362,4 @@ const BackgroundAnimation = () => (
   </div>
 );
 
-export default BackgroundAnimation;
+export default ParticlesAnimation;

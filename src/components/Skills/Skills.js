@@ -3,7 +3,6 @@ import React from "react";
 import {
   Section,
   SectionDivider,
-  SectionText,
   SectionTitle,
 } from "components/Common/Section";
 
@@ -16,13 +15,13 @@ import {
 } from "components/Skills/Styles";
 
 const Skills = () => (
-  <Section fullHeight nopadding id="Skills">
+  <Section fullHeight id="Skills">
     <SectionDivider colorAlt divider xMargin />
     <SectionTitle xMargin>Skills</SectionTitle>
-    <SectionText xMargin>
+    {/* <SectionText xMargin>
       I've worked with a range a technologies in the web development. From
       Back-end To Design.
-    </SectionText>
+    </SectionText> */}
     <List xMargin>
       <ListItem>
         <ListContainer>
