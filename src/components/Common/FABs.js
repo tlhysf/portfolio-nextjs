@@ -25,18 +25,10 @@ const Container = styled.div`
 const FABs = () => {
   const { scroll } = useContext(Context);
 
-  // scroll position as entering a section
-  // works only on desktop
-  // atm needed only for desktop as well
-  const section = {
-    second: 350,
-    last: 4200,
-  };
-
   return (
-    <Container hide={scroll.y > section.second}>
+    <Container hide={scroll.y > 350}>
       <div />
-      <SocialLinks column hideOnSmall hide={scroll.y > section.last} />
+      <SocialLinks column hideOnSmall />
       <IconButton href="#Home">
         <AiOutlineArrowUp />
       </IconButton>
