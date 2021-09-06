@@ -5,7 +5,7 @@ import SocialLinks from "components/Common/SocialLinks";
 import { IconButton } from "components/Common/Buttons";
 import { AiOutlineArrowUp } from "react-icons/ai";
 
-import { Context } from "Context";
+import { Context } from "context";
 
 const Container = styled.div`
   position: fixed;

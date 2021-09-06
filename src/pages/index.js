@@ -7,7 +7,7 @@ import Timeline from "components/Timeline/Timeline";
 import Gallery from "components/Common/Gallery";
 import { Layout } from "../layout/Layout";
 
-import ContextProvider from "Context";
+import ContextProvider from "context";
 
 const Home = () => {
   const [galleryState, setGalleryState] = useState({
