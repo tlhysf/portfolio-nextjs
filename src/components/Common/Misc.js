@@ -28,6 +28,8 @@ export const Title = styled(HeaderText)`
   font-weight: 300;
   letter-spacing: 2px;
   color: ${(props) => props.theme.colors.text.primary};
+  display: flex;
+  align-items: flex-start;
 `;
 
 export const ExternalLink = styled(HeaderText)`
@@ -46,7 +48,9 @@ export const ExternalLink = styled(HeaderText)`
 `;
 
 export const Text = styled.div`
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
   color: ${(props) =>
     props.theme.colors.text[props.bright ? "primary" : "secondary"]};
   display: flex;
