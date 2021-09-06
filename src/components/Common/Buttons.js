@@ -20,13 +20,14 @@ export const ButtonGroup = styled.div`
 `;
 
 export const Button = styled.a`
-  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  border-style: solid;
   border-radius: 3px;
   border-width: 1px;
+  border-color: #00000000;
   transition: 0.3s ease;
   width: ${(props) => (props.autoWidth ? "fit-content" : "12rem")};
   padding: 0 1.5rem;
@@ -37,20 +38,19 @@ export const Button = styled.a`
   color: white;
 
   @media ${(props) => !props.small} {
-    width: 9rem;
+    width: ${(props) => (props.autoWidth ? "fit-content" : "9rem")};
     height: 3rem;
   }
 
   &:hover {
-    border-style: solid;
     background: none;
     color: ${(props) => props.theme.colors.text.primary};
     font-weight: 500;
+    border-color: white;
   }
 
   &:active {
     background: ${(props) => props.theme.colors.accent.primary + "50"};
-    border-style: solid;
   }
 `;
 
