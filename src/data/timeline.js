@@ -21,13 +21,13 @@ export const timeline = [
     description:
       "CARE deals in Software Development and Electronics Engineering dealing with both client and in-house products, with focus on Communication Systems, IoT and ERP Solutions.",
     bullets: [
-      "Developed and shipped highly customized and fully-responsive Industrial IoT Web portals built in MERN Stack.",
+      "Developed and shipped highly customized and fully-responsive enterprise IoT Web portals built in MERN Stack.",
       "Interfaced with clients on a weekly basis for requirement gathering.",
       "Worked closely with designers for translating business requirements into technical features and designing the UI/UX.",
       "Worked with a team of developers to design the backend architecture.",
       "Translated UI wireframes to frontend code.",
       "Worked on code-refactoring, bug-fixing and developing new features for existing applications (mainly in JavaScript).",
-      "Learned and implemented best development practices to write clean, re-useable and efficient code.",
+      "Learned and implemented best development practices to write clean, re-useable, scalable, and efficient code.",
       "Developed and maintained RESTFul web services.",
     ],
     link: "https://www.carepvtltd.com/",

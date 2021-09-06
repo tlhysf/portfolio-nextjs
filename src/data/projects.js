@@ -40,7 +40,7 @@ export const projects = [
     description: [
       "My personal portfolio website. Designed and developed with a conscious effort to avoid using any libraries/frameworks besides nextJS and styled-components, hence all the components, their styling and transitions/animations are implemented from scratch.",
     ],
-    tags: ["NextJS", "Styled Components"],
+    tags: ["ReactJS", "NextJS", "Styled Components"],
     source: "https://github.com/tlhysf/portfolio-nextjs",
     demo: "/",
   },
@@ -69,7 +69,7 @@ export const projects = [
     folderName: "genes",
     title: "Genes and Machines",
     description: [
-      "Website for Genes and Machines, a science communication startup.",
+      "Website for Genes and Machines, a science communication startup, featuring a video gallery for their podcasts with filter based on tags.",
     ],
     tags: ["Frontend", "React"],
     demo: "https://genes-and-machines.web.app/",
