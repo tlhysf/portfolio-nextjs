@@ -6,11 +6,11 @@ export const timeline = [
     description:
       "A subsidiary of Sedenius Engineering GmbH, focused on software development for automotive industry.",
     bullets: [
-      "Implemented new features, resolved bugs, improved perfomrance through code-refactoring for a customer-facing react native app.",
       "Developed an asset management and rental web portal using React, Redux, and, LeafletJS.",
       "Closely worked with product manager and design team to bring the application from concept to code.",
-      "Set up and managed CI/CD pipeline with Jenkins.",
       "Performed manual testing in various browsers and mobile devices to ensure cross-browser compatibility and responsiveness.",
+      "Set up and managed CI/CD pipeline with Jenkins.",
+      "Implemented new features, resolved bugs, improved performance through code-refactoring for a customer-facing react native app.",
     ],
     link: "https://pk.sedenius.com/",
   },
@@ -41,14 +41,14 @@ export const timeline = [
     bullets: [
       "Developed embedded hardware and software for point-of-care blood testing devices.",
     ],
-    link: "https://www.facebook.com/GenesMachines.io",
+    // link: "https://www.facebook.com/GenesMachines.io",
   },
   {
     period: "Feb 2018 - Sep 2019",
     title: "Co-founder/Embedded Systems Developer",
     place: "Uproot",
     bullets: [
-      "Developed embedded hardware and software for automation of hydroponics farms.",
+      "Developed embedded hardware and software for automated hydroponics farms.",
       "Delivered prototypes while keeping the supply chain as minimalistic as possible.",
       "Worked with diverse team-members with electrical engineering, applied bio-science and industrial design background to come up with solutions.",
       "Worked with contractors and vendors to support design efforts.",
