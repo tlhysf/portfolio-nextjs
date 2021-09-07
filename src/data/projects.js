@@ -3,9 +3,10 @@ export const projects = [
     folderName: "wisermachines",
     title: "WiserMachines",
     description: [
-      "A full-stack web app built for digitizing factory shop floors. Its users can be factory personnel with different roles.",
-      "The app features different dashboards that visualize real-time data from machines, track machine performance and up-time, provide insights about machine utilization. Factories are mapped out in terms of workshops, zones, and machines which can be monitored individually and grouped.",
-      "Users can set triggers and thresholds on machine or environment data for alert generation, schedule work shifts, keep track of production schedules, and generate reports.",
+      "A full-stack web app built for digitizing factory shop floors. Its users can be factory personnel with different roles and levels of authorization.",
+      "The app features several fully responsive dashboards that visualize real-time raw data from machines, and insights about machine performance, up-time & utilization.",
+      "Factories are mapped out in terms of workshops, zones, and machines which can be monitored individually and grouped.",
+      "Users can schedule work shifts, keep track of production schedules, generate reports, set triggers and thresholds on machine or environment data for alert generation and receive real time push notifications.",
     ],
     tags: [
       "Full-stack",
@@ -26,21 +27,26 @@ export const projects = [
     folderName: "sedenius",
     title: "Asset Management",
     description: [
-      "A comprehensive asset management tool for inventory keeping, maintenance planning and scheduling, resource allocation, rent scheduling, and location monitoring, of assets such electronics, mechanical equipment, etc.",
+      "A comprehensive asset management and rental application.",
 
-      "Its users can be renting agencies, renters/customers, maintenace agencies, agency employees, freelancers. etc. each having different level of authorization and roles. These user can coordinate with other users for booking assets for rent, planning maintenance, and assigning tasks.",
+      "Its users can be renting agencies, renters/customers, other agencies or freelancers that can perform maintenance of assets, which can be electronics, hardware tools, vehicles and any other kind of machines/equipment.",
 
-      "Users can have an overview of schedules, locations and status of their assets.They can create and modify assets, change ownerships, set reminders for events, and create templates for assets, events and tasks.",
+      "Users can track their assets by location and status. Schedule them for rent or maintenance. Plan maintenance tasks, allocate resources, and coordinate with other users.",
+
+      "Users can have roles inside an agency such as admin, manager, employee etc. each can be assigned different level of authorization by admin.",
+
+      "Users can see an overview of schedules, locations and status of their assets. They can create and modify assets, change ownerships, set reminders for events, and create templates for assets, events or tasks.",
     ],
-    tags: ["Frontend", "React", "Redux", "Leaflet", "RBC"],
+    tags: ["Frontend", "React", "Redux", "Leaflet", "Recharts", "RBC"],
   },
   {
     folderName: "portfolio",
     title: "Portfolio Website",
     description: [
-      "My personal portfolio website. Designed and developed with a conscious effort to avoid using any libraries/frameworks besides nextJS and styled-components, hence all the components, their styling and transitions/animations are implemented from scratch.",
+      "My personal portfolio website.",
+      "Designed and developed with a conscious effort to avoid using any libraries/frameworks besides nextJS and styled-components, hence all the components, their styling and transitions/animations are implemented from scratch.",
     ],
-    tags: ["ReactJS", "NextJS", "Styled Components"],
+    tags: ["Styled Components", "NextJS"],
     source: "https://github.com/tlhysf/portfolio-nextjs",
     demo: "/",
   },
@@ -48,8 +54,8 @@ export const projects = [
     folderName: "devlink",
     title: "MERN Social Media App",
     description: [
-      "This was a personal project. Its a full-stack app build in MERN, featuring basic functionalities of a social media platform.",
-      "Users can create profiles, add experiences and education fields. They can create posts and can view public profiles and posts made by others, and can like/unlike and comment on posts.",
+      "This was a personal project. Its a full-stack app build in MERN featuring basic functionalities of a social media platform.",
+      "Such as: User authentication, CRUD operations (user profiles, posts, likes, comments etc.), Error response handling, Server-side form validation, and Responsiveness.",
     ],
     tags: [
       "Full-stack",
