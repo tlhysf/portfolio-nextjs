@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Banner from "../components/Banner/Banner";
 import Projects from "../components/Projects/Projects";
 import About from "../components/About";
-import Timeline from "components/Timeline/Timeline";
+import Timeline from "components/TimeLinee";
 import Gallery from "components/Common/Gallery";
 import { Layout } from "../layout/Layout";
 
