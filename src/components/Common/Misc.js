@@ -5,7 +5,7 @@ const HeaderText = styled.a`
   height: 40px;
   transition: all ease-in-out 0.3s;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-right: 5px;
 
   @media ${(props) => props.theme.breakpoints.lg} {
@@ -28,8 +28,6 @@ export const Title = styled(HeaderText)`
   font-weight: 300;
   letter-spacing: 2px;
   color: ${(props) => props.theme.colors.text.primary};
-  display: flex;
-  align-items: flex-start;
 `;
 
 export const ExternalLink = styled(HeaderText)`
@@ -51,10 +49,13 @@ export const Text = styled.div`
   font-size: 15px;
   line-height: 20px;
   letter-spacing: 0.5px;
+
   color: ${(props) =>
     props.theme.colors.text[props.bright ? "primary" : "secondary"]};
-  display: flex;
-  align-items: center;
+
+  text-align: left;
+  text-justify: none;
+  word-wrap: break-word;
 `;
 
 export const List = styled.div`

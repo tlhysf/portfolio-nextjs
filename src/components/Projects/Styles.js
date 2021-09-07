@@ -87,7 +87,7 @@ export const Image = styled.img`
   height: 180px;
   object-fit: cover;
 
-  opacity: 0.9;
+  opacity: 0.8;
   transition: 0.3s ease-in-out;
 `;
 
@@ -100,11 +100,6 @@ export const Card = styled.div`
 
   width: 100%;
   height: 100%;
-
-  /* &:hover {
-    width: 100%;
-    height: 100%;
-  } */
 
   &:hover ${Image} {
     opacity: 1;
@@ -140,6 +135,11 @@ export const Divider = styled.hr`
   height: 2px;
   border: 0;
   background: ${(props) => props.theme.colors.gradients.primary};
+
+  @media ${(props) => !props.fullWidth} {
+    width: 100%;
+    height: 1px;
+  }
 `;
 
 export const TagList = styled.div`
@@ -160,7 +160,8 @@ export const Tag = styled.div`
 `;
 
 export const DescriptionContainer = styled.div`
-  max-width: 300px;
+  width: 100%;
+  height: 80%;
   margin: 0 auto;
 
   display: flex;

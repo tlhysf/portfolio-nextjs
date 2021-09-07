@@ -15,7 +15,7 @@ export const Section = styled.section`
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    margin: 0 4rem;
+    margin: 0 6rem;
   }
 `;
 

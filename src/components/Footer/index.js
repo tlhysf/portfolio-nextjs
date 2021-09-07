@@ -29,46 +29,58 @@ const Footer = () => {
     }, 2000);
   }, [copied]);
 
+  const renderEmailButtonGroup = (
+    <List row smallGap center>
+      <Button autoWidth href={`mailto:${email}`} target="_blank">
+        {email}
+      </Button>
+      <Tooltip content={copied ? "Copied" : "Copy Email"}>
+        <Button autoWidth onClick={() => handleCopyButton()}>
+          {copied ? <FiCheckCircle /> : <FiCopy />}
+        </Button>
+      </Tooltip>
+    </List>
+  );
+
+  const renderCopyRight = (
+    <List row smallGap center>
+      <RiCopyrightLine />
+      <Text>Talha Yousuf, {new Date().getFullYear()}</Text>
+    </List>
+  );
+
   return (
     <Section id="Contact" fullHeight>
       <SectionDivider />
       <SectionTitle>Get in touch!</SectionTitle>
-      <List>
-        <List>
-          <List smallGap>
-            <Title>
-              Got a question or proposal, or just want to say hello?
-            </Title>
-            <Text>Feel free shoot me an email.</Text>
-          </List>
-          <List row smallGap>
-            <Button autoWidth href={`mailto:${email}`} target="_blank">
-              {email}
-            </Button>
-            <Tooltip content={copied ? "Copied" : "Copy Email"}>
-              <Button autoWidth onClick={() => handleCopyButton()}>
-                {copied ? <FiCheckCircle /> : <FiCopy />}
-              </Button>
-            </Tooltip>
-          </List>
-        </List>
+      <Container>
+        <Title>Got a question or proposal, or just want to say hello?</Title>
+        <Text>Feel free shoot me an email.</Text>
+        {renderEmailButtonGroup}
         <br />
-        <List>
-          <Title>Find me on the web!</Title>
-          <SocialLinks />
-        </List>
-      </List>
-      <div style={{ flex: 1 }}></div>
+        <Title>Find me on the web!</Title>
+        <SocialLinks />
+      </Container>
       <SectionDivider />
-      <List>
-        <List row smallGap center>
-          <RiCopyrightLine />
-          <Text>Talha Yousuf, {new Date().getFullYear()}</Text>
-        </List>
-        <br />
-      </List>
+      {renderCopyRight}
+      <br />
     </Section>
   );
 };
 
 export default Footer;
+
+const Container = ({ children }) => (
+  <div
+    style={{
+      flex: 1,
+      display: "flex",
+      flexDirection: "column",
+      rowGap: "2rem",
+      justifyContent: "center",
+      alignItems: "center",
+    }}
+  >
+    {children}
+  </div>
+);

@@ -106,6 +106,7 @@ const Project = ({ data, setGalleryState }) => {
 
   return (
     <Card>
+      <Divider fullWidth />
       <CardMarkup>
         {renderImage}
 
