@@ -8,7 +8,7 @@ import {
 
 import { List } from "components/Common/Misc";
 
-import Experience from "components/Timeline/Experience";
+import Experience from "./Experience";
 
 import { timeline } from "data/timeline";
 
