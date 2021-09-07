@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import Banner from "../components/Banner/Banner";
 import Projects from "../components/Projects/Projects";
 import About from "../components/About";
-import Timeline from "components/TimeLinee";
+import Timeline from "components/TimeLine";
 import Gallery from "components/Common/Gallery";
 import { Layout } from "../layout/Layout";
 
-import ContextProvider from "Context";
+import ContextProvider from "context";
 
 const Home = () => {
   const [galleryState, setGalleryState] = useState({
