@@ -8,7 +8,7 @@ import {
 
 import { List } from "components/Common/Misc";
 
-import Step from "components/Timeline/Step";
+import Experience from "components/Timeline/Experience";
 
 import { timeline } from "data/timeline";
 
@@ -23,7 +23,7 @@ const Timeline = () => {
       <SectionTitle>Timeline</SectionTitle>
       <List noGap>
         {timeline.map((data, index) => (
-          <Step
+          <Experience
             key={data.period}
             {...{
               data,

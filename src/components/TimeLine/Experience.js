@@ -16,7 +16,7 @@ import Tooltip from "components/Common/Tooltip";
 import { FiChevronsRight, FiCircle } from "react-icons/fi";
 import { GiGraduateCap } from "react-icons/gi";
 
-const Step = ({ data, index, expanded, setExpanded, widthFactor, last }) => {
+const Experience = ({ data, index, expanded, setExpanded, widthFactor, last }) => {
   const { period, title, place, link, description } = data;
   const bullets = data.bullets ? data.bullets : [];
 
@@ -107,4 +107,4 @@ const Step = ({ data, index, expanded, setExpanded, widthFactor, last }) => {
   );
 };
 
-export default Step;
+export default Experience;
