@@ -57,7 +57,11 @@ export const ExpandButton = styled.div`
   }
 `;
 
-const circleSize = 16;
+export const Header = styled.div`
+  padding-top: 8px;
+`;
+
+const circleSize = 15;
 const lineWidth = 2;
 const lineMargin = circleSize / 2 - lineWidth / 2;
 

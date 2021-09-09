@@ -57,7 +57,7 @@ export const timeline = [
   },
   {
     period: "Class of 2018",
-    title: "Graduated, Electrical Engineering",
+    title: "Bachelors of Electrical Engineering",
     place: "NUST",
     link: "https://nust.edu.pk/",
   },
