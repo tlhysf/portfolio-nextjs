@@ -11,7 +11,7 @@ import { Title, Text, List } from "components/Common/Misc";
 
 import { FiChevronsRight } from "react-icons/fi";
 
-import { about, skills } from "data/about";
+import { about, skills, skillsAlt } from "data/about";
 
 export const Grid = styled.section`
   display: grid;
@@ -28,6 +28,21 @@ export const Grid = styled.section`
   }
 `;
 
+export const FlexBox = styled.div`
+  /* width: 80%; */
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  row-gap: 1rem;
+`;
+
+export const Pill = styled.div`
+  padding: 1rem;
+  color: ${({ theme }) => theme.colors.bg.tertiary};
+  background-color: ${({ theme }) => theme.colors.text.primary};
+  border-radius: 5px;
+`;
+
 const About = () => (
   <Section fullHeight id="About">
     <SectionDivider />
@@ -37,7 +52,7 @@ const About = () => (
         <Text key={index}>{item}</Text>
       ))}
       <Text>Here is a summary of my skill-set:</Text>
-      <br />
+      {/* <br />
       <Grid>
         {skills.map((item, index) => (
           <List key={index}>
@@ -52,8 +67,15 @@ const About = () => (
             </List>
           </List>
         ))}
-      </Grid>
+      </Grid> */}
+      <br />
+      <FlexBox>
+        {skillsAlt.map((item, index) => (
+          <Pill key={index}>{item}</Pill>
+        ))}
+      </FlexBox>
     </List>
+    <br />
     <br />
   </Section>
 );

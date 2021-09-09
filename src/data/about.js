@@ -22,3 +22,16 @@ export const skills = [
     list: "Figma, Photoshop",
   },
 ];
+
+export const skillsAlt = [
+  "JavaScript(ES6)",
+  "HTML, CSS",
+  "React, Redux, Next",
+  "Styled Components, MaterialUI, Bootstrap",
+  "Node, Express",
+  "MongoDB, MySQL",
+  "Netlify, Heroku, Firebase",
+  "Git, Trello, Redmine",
+  "Figma, Photoshop",
+  "Python, C++",
+];
