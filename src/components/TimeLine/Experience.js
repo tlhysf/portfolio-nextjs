@@ -13,7 +13,7 @@ import {
 import { List, Title, ExternalLink, Text } from "components/Common/Misc";
 import Tooltip from "components/Common/Tooltip";
 import { FiChevronsRight } from "react-icons/fi";
-import { FaUserGraduate, FaCircle } from "react-icons/Fa";
+import { FaUserGraduate, FaCircle } from "react-icons/fa";
 
 const Experience = ({
   data,
