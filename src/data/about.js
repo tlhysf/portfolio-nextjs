@@ -24,7 +24,7 @@ export const skills = [
 ];
 
 export const skillsAlt = [
-  "JavaScript(ES6)",
+  "JavaScript (ES6)",
   "HTML, CSS",
   "React, Redux, Next",
   "Styled Components, MaterialUI, Bootstrap",

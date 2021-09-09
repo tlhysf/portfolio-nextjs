@@ -40,14 +40,16 @@ export const FlexBox = styled.div`
   /* width: 80%; */
   display: flex;
   flex-wrap: wrap;
-  column-gap: 1rem;
-  row-gap: 1rem;
+  column-gap: 1.2rem;
+  row-gap: 1.2rem;
 `;
 
 export const Pill = styled.div`
   padding: 1rem;
-  color: ${({ theme }) => theme.colors.bg.tertiary};
-  background-color: ${({ theme }) => theme.colors.text.primary};
+  color: ${({ theme }) => theme.colors.text.primary};
+  background-color: ${({ theme, index }) =>
+    theme.colors.accent.primary +
+    String(Math.abs(100 - index * 5)).slice(0, 2)};
   border-radius: 5px;
 `;
 
@@ -79,7 +81,9 @@ const About = () => (
       <br />
       <FlexBox>
         {skillsAlt.map((item, index) => (
-          <Pill key={index}>{item}</Pill>
+          <Pill index={index + 1} key={index}>
+            {item}
+          </Pill>
         ))}
       </FlexBox>
     </List>
