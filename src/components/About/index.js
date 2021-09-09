@@ -7,11 +7,19 @@ import {
   SectionTitle,
 } from "components/Common/Section";
 
-import { Title, Text, List } from "components/Common/Misc";
+import {
+  // Title,
+  Text,
+  List,
+} from "components/Common/Misc";
 
-import { FiChevronsRight } from "react-icons/fi";
+// import { FiChevronsRight } from "react-icons/fi";
 
-import { about, skills, skillsAlt } from "data/about";
+import {
+  about,
+  // skills,
+  skillsAlt,
+} from "data/about";
 
 export const Grid = styled.section`
   display: grid;
