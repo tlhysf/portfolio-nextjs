@@ -24,7 +24,7 @@ export const projects = [
     demo: "https://wisermachines-demo-12e0a.web.app/",
   },
   {
-    folderName: "sedenius",
+    folderName: "sedenius-hideimagestemporary",
     title: "Asset Management",
     description: [
       "A comprehensive asset management and rental application.",
