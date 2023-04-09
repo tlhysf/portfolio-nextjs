@@ -3,7 +3,8 @@ export const projects = [
     folderName: "wisermachines",
     title: "WiserMachines",
     description: [
-      "A full-stack web app built for digitizing factory shop floors. Its users can be factory personnel with different roles and levels of authorization.",
+      "A full-stack web app built for digitizing factory shop-floors.",
+      "Its users can be factory personnel with different roles and levels of authorization.",
       "The app features several fully responsive dashboards that visualize real-time raw data from machines, and insights about machine performance, up-time & utilization.",
       "Factories are mapped out in terms of workshops, zones, and machines which can be monitored individually and grouped.",
       "Users can schedule work shifts, keep track of production schedules, generate reports, set triggers and thresholds on machine or environment data for alert generation and receive real time push notifications.",
@@ -24,18 +25,13 @@ export const projects = [
     demo: "https://wisermachines-demo-12e0a.web.app/",
   },
   {
-    folderName: "sedenius-hideimagestemporary",
-    title: "Asset Management",
+    folderName: "sedenius",
+    title: "Machine Maintenance",
     description: [
-      "A comprehensive asset management and rental application.",
-
-      "Its users can be renting agencies, renters/customers, other agencies or freelancers that can perform maintenance of assets, which can be electronics, hardware tools, vehicles and any other kind of machines/equipment.",
-
-      "Users can track their assets by location and status. Schedule them for rent or maintenance. Plan maintenance tasks, allocate resources, and coordinate with other users.",
-
-      "Users can have roles inside an agency such as admin, manager, employee etc. each can be assigned different level of authorization by admin.",
-
-      "Users can see an overview of schedules, locations and status of their assets. They can create and modify assets, change ownerships, set reminders for events, and create templates for assets, events or tasks.",
+      "This is a comprehensive workspace app for management and rentals of physical assets such as electronics, hardware tools, vehicles and any other kind of machines/equipment that can be monitored via IoT sensors.",
+      "Renting agencies, renters/customers and freelancers can track their rented or owned assets by location and status, schedule them for rent or maintenance.",
+      "Rental agency staff can collaboratively work on internal operations such as task planning and tracking, allocating resources, and reporting problems etc.",
+      "Users can have roles inside an agency such as admin, manager, employee etc. each can be assigned a different level of authorization by admin.",
     ],
     tags: ["Frontend", "React", "Redux", "Leaflet", "Recharts", "RBC"],
   },
@@ -54,8 +50,7 @@ export const projects = [
     folderName: "devlink",
     title: "MERN Social Media App",
     description: [
-      "This was a personal project. Its a full-stack app build in MERN featuring basic functionalities of a social media platform.",
-      "Such as: User authentication, CRUD operations (user profiles, posts, likes, comments etc.), Error response handling, Server-side form validation, and Responsiveness.",
+      "This was a personal project. It's a full-stack app build in MERN featuring basic functionalities of a social media platform. Such as: User authentication, CRUD operations (user profiles, posts, likes, comments etc.), Error response handling, Server-side form validation, and Responsiveness.",
     ],
     tags: [
       "Full-stack",
