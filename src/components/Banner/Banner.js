@@ -24,7 +24,7 @@ const Banner = () => (
           <Greeting>Hi there 👋, I’m</Greeting>
           <Heading>Talha Yousuf</Heading>
           <SubHeading>Fullstack Web Developer</SubHeading>
-          <Text>Islamabad, Pakistan</Text>
+          {/* <Text>Islamabad, Pakistan</Text> */}
           <br />
           <SocialLinks />
           <br />
