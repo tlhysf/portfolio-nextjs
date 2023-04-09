@@ -25,6 +25,8 @@ export const Layout = ({ children }) => {
     setHash((state) => (hash === state ? state : onHashChange()));
   };
 
+  document.title = "Talha Yousuf";
+
   useEffect(() => {
     window.addEventListener(
       "onhashchange",
