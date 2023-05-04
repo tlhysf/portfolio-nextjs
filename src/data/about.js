@@ -5,10 +5,11 @@ export const about = [
 ];
 
 export const skillsAlt = [
-  "JavaScript",
+  "JavaScript, TypeScript",
   "HTML, CSS",
   "React, Redux, Next",
-  "TailwindCss, Styled Components, MaterialUI",
+  "Angular2+",
+  "TailwindCSS, Styled Components, MaterialUI",
   "Node, Express",
   "MongoDB, Firebase",
   "Jenkins, Docker",
