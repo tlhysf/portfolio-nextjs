@@ -19,52 +19,35 @@ import {
 
 import { VscGithubAlt, VscLinkExternal, VscZoomIn } from "react-icons/vsc";
 
-import { getImageRefs, getImageURL } from "data/images";
+import axios from "axios";
 
 const Project = ({ data, setGalleryState }) => {
   const { title, description, folderName, tags, source, demo } = data;
 
   const [openDrawer, setOpenDrawer] = useState(false);
 
-  const [imageRefs, setimageRefs] = useState([]);
-  const [imageURLs, setimageURLs] = useState([]);
-  const [imageURLsSorted, setimageURLsSorted] = useState([]);
+  const [imageURLs, setImageURLs] = useState([]);
 
   useEffect(() => {
-    if (folderName && imageRefs.length === 0)
-      getImageRefs(folderName).then((x) => {
-        setimageRefs(x);
-      });
-  }, []);
+    const rootURL = "http://localhost:8000/images";
 
-  useEffect(() => {
-    if (imageRefs)
-      imageRefs.forEach((ref) =>
-        getImageURL(ref).then((url) => {
-          if (imageURLs.indexOf(url) < 0) setimageURLs((x) => [...x, url]);
+    if (folderName) {
+      axios
+        .get(rootURL + "/" + folderName)
+        .then((response) => {
+          setImageURLs(
+            response.data.map(
+              (imageFileName) =>
+                rootURL + "/" + folderName + "/" + imageFileName
+            )
+          );
         })
-      );
-  }, [imageRefs]);
-
-  useEffect(() => {
-    const getFileNameFromURL = (url) => {
-      const split1 = String(url).split(".png");
-      const split2 = split1[0].split("%2F");
-      return split2[split2.length - 1];
-    };
-
-    if (imageURLs.length === imageRefs.length) {
-      const sorted = imageURLs.sort((A, B) => {
-        const a = parseInt(getFileNameFromURL(A));
-        const b = parseInt(getFileNameFromURL(B));
-        if (a < b) return -1;
-        if (a > b) return 1;
-        return 0;
-      });
-
-      setimageURLsSorted(sorted);
+        .catch((error) => {
+          setImageURLs([]);
+          console.error(error);
+        });
     }
-  }, [imageURLs]);
+  }, []);
 
   const renderActions = (drawer) => (
     <CardMarkup row>
@@ -86,13 +69,11 @@ const Project = ({ data, setGalleryState }) => {
     </CardMarkup>
   );
 
-  const renderImage = imageURLsSorted[0] ? (
+  const renderImage = imageURLs[0] ? (
     <ImageWrapper
-      onClick={(e) =>
-        setGalleryState({ images: imageURLsSorted, title, open: true })
-      }
+      onClick={(e) => setGalleryState({ images: imageURLs, title, open: true })}
     >
-      <Image fullWidth src={imageURLsSorted[0]} alt={title} />
+      <Image fullWidth src={imageURLs[0]} alt={title} />
 
       <ImageButton>
         <VscZoomIn />
