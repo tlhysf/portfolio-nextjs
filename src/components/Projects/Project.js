@@ -29,7 +29,7 @@ const Project = ({ data, setGalleryState }) => {
   const [imageURLs, setImageURLs] = useState([]);
 
   useEffect(() => {
-    const rootURL = "http://localhost:8000/images";
+    const rootURL = "https://portfolio-server-tlhysf.vercel.app/images";
 
     if (folderName) {
       axios
