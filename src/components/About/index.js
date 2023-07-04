@@ -61,23 +61,7 @@ const About = () => (
       {about.map((item, index) => (
         <Text key={index}>{item}</Text>
       ))}
-      <Text>Here is a summary of my skill-set:</Text>
-      {/* <br />
-      <Grid>
-        {skills.map((item, index) => (
-          <List key={index}>
-            <Title>{item.title}</Title>
-            <List smallGap>
-              {item.list.split(",").map((item, index) => (
-                <List smallGap row key={index}>
-                  <FiChevronsRight />
-                  <Text>{item}</Text>
-                </List>
-              ))}
-            </List>
-          </List>
-        ))}
-      </Grid> */}
+
       <br />
       <FlexBox>
         {skillsAlt.map((item, index) => (

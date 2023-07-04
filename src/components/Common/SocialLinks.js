@@ -1,49 +1,16 @@
 import React from "react";
 
-import { AiFillGithub, AiFillMail, AiFillLinkedin } from "react-icons/ai";
 import { ButtonGroup, IconButton } from "components/Common/Buttons";
 
-const socials = [
-  {
-    name: "github",
-    link: "http://www.github.com/tlhysf",
-    icon: <AiFillGithub />,
-    external: true,
-  },
-  {
-    name: "linkedin",
-    link: "http://www.linkedin.com/in/talha-yousuf",
-    icon: <AiFillLinkedin />,
-    external: true,
-  },
-  {
-    name: "mail",
-    link: "#Contact",
-    icon: <AiFillMail />,
-    external: false,
-  },
-];
-
-const getColor = (name) => {
-  switch (name) {
-    case "github":
-      return "indigo";
-    case "linkedin":
-      return "blueviolet";
-    case "mail":
-      return "crimson";
-    default:
-      return "gray";
-  }
-};
+import { socials } from "data/about";
 
 const SocialLinks = (props) => {
   return (
     <ButtonGroup {...props}>
-      {socials.map(({ name, link, icon, external }) => (
+      {socials.map(({ name, link, icon, external }, index) => (
         <IconButton
           key={name}
-          color={getColor(name)}
+          color={["indigo", "blueviolet", "crimson"][index] || "gray"}
           target={external ? "_blank" : ""}
           href={link}
         >

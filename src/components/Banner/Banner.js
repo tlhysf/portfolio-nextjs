@@ -16,15 +16,16 @@ import {
 
 import ParticlesAnimation from "./ParticlesAnimation";
 
+import { banner } from "data/about";
+
 const Banner = () => (
   <div>
     <Section fullHeight id="Home">
       <Container>
         <TextContainer>
-          <Greeting>Hi there 👋, I’m</Greeting>
-          <Heading>Talha Yousuf</Heading>
-          <SubHeading>Fullstack Web Developer</SubHeading>
-          {/* <Text>Islamabad, Pakistan</Text> */}
+          <Greeting>{banner.greeting}</Greeting>
+          <Heading>{banner.headline1}</Heading>
+          <SubHeading>{banner.headline2}</SubHeading>
           <br />
           <SocialLinks />
           <br />
